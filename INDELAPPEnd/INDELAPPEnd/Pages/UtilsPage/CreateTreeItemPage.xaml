@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:customcontrols="clr-namespace:INDELAPPEnd.CustomControls"
+             x:Class="INDELAPPEnd.Pages.UtilsPage.CreateTreeItemPage"
+             BackgroundColor="#66C1C1C1"
+             Padding="20">
+    
+    <ContentPage.Content>
+        <Frame 
+            Padding="10"
+            VerticalOptions="Center">
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                
+                <Grid
+                    RowSpacing="5">
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="37"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label 
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        x:Name="labelControl"
+                        FontSize="16"
+                        FontAttributes="None"
+                        VerticalTextAlignment="Center"
+                        TextColor="Black">
+
+                    </Label>
+
+                    <Frame
+                        CornerRadius="5"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        BorderColor="#c2c2c2"
+                        Grid.ColumnSpan="2"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="Transparent">
+                    </Frame>
+
+                    <customcontrols:RoundedEntryPrimary
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        x:Name="entryControl"
+                        Grid.ColumnSpan="2"
+                        VerticalTextAlignment="Center"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="Black"
+                        FontSize="Subtitle">
+
+                    </customcontrols:RoundedEntryPrimary>
+                    
+                </Grid>
+
+                <StackLayout 
+                    Margin="0,-4,-12,-6"
+                    Orientation="Horizontal"
+                    VerticalOptions="EndAndExpand"
+                    HorizontalOptions="EndAndExpand">
+
+                    <Button
+                        Scale="0.75"
+                        Font="18"
+                        HorizontalOptions="EndAndExpand"
+                        CornerRadius="5"
+                        FontAttributes="None"
+                        Text = "Отмена"
+                        TextColor = "White"
+                        BackgroundColor = "#D9534F"
+                        Clicked="DeclineButtonClicked"
+                            >
+                    </Button>
+
+                    <Button
+                        Margin="-20,0,0,0"
+                        Font="18"
+                        Scale="0.75"
+                        HorizontalOptions="EndAndExpand"
+                        CornerRadius = "5"
+                        FontAttributes="None"
+                        Text = "Ок"
+                        TextColor = "White"
+                        BackgroundColor = "#337ab7"
+                        Clicked="AcceptButtonClicked"
+                            >
+                    </Button>
+
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

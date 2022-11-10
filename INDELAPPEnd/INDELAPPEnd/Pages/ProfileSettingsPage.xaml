@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewModel="clr-namespace:INDELLAPPEnd.Pages"
+             x:Class="INDELLAPPEnd.Pages.ProfileSettingsPage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White"
+             Padding="10">
+
+    
+    
+    <ContentPage.Content>
+        <StackLayout 
+            Padding="10"
+            VerticalOptions="FillAndExpand">
+            <Grid
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image
+                    Grid.Row="0"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Source="log.png">
+                </Image>
+
+                <Label
+                    FontSize="Medium"
+                    Grid.Row="1"
+                    x:Name="versionLabel"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Start"
+                    TextColor="#c2c2c2">
+                </Label>
+                   
+                <AbsoluteLayout
+                    Grid.Row="4"
+                    IsVisible="{Binding IsConfigured}"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                    <Label
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Start"
+                        Text="Приложение не сконфигурировано."
+                        TextColor="#337ab7">
+                    </Label>
+                </AbsoluteLayout>
+                
+                <ActivityIndicator
+                        Grid.Row="4"
+                        x:Name="loadingIndicator"
+                        HorizontalOptions="Center"
+                        VerticalOptions="CenterAndExpand"
+                        Color="#337ab7"
+                        IsEnabled="{Binding IsBusyActivityIndicator}"
+                        IsVisible="{Binding IsBusyActivityIndicator}"
+                        IsRunning="{Binding IsBusyActivityIndicator}">
+
+                </ActivityIndicator>
+                
+            </Grid>
+            <Button 
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                CornerRadius="5"
+                IsVisible="{Binding IsConfigured}"
+                Text="Сконфигурировать приложение"
+                TextColor="White"
+                BackgroundColor="#337ab7"
+                Clicked="NextButtonClick"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

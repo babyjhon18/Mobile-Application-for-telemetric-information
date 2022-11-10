@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="INDELAPPEnd.Pages.SettingsPage"
+             x:Name="ParentBindingContext"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:control="clr-namespace:INDELLAPPEnd" 
+             BackgroundColor="White"
+             Padding="10">
+
+    <ContentPage.ToolbarItems>
+
+        <control:BindableToolbarItem
+            x:Name="addConfigurationToolbarItem"
+            IconImageSource="AddButton.png" 
+            Clicked="AddConfigurationButtonClicked"
+            >
+        </control:BindableToolbarItem>
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Margin="1">
+            <!--Доступные сети-->
+            <Label
+                Text="Доступные соединения:"
+                TextColor="#8c8c8c"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"
+                FontSize="Subtitle"
+                ></Label>
+            <AbsoluteLayout
+                x:Name="hintAvailible"        
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                >
+                <Label 
+                    TextColor="#8c8c8c"
+                    Text="Нет доступных соединений"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center">
+
+                </Label>
+            </AbsoluteLayout>
+            <!--Текущее соединение-->
+            <Frame
+                Padding="10"
+                HeightRequest="55"
+                x:Name="currentNet"
+                BackgroundColor="{Binding Source={x:Reference ParentBindingContext},
+                            Path=BindingContext.PrimaryColor}"
+                xct:TouchEffect.AnimationDuration="350"
+                xct:TouchEffect.PressedAnimationDuration="20"
+                xct:TouchEffect.PressedOpacity="0.5"
+                xct:TouchEffect.Command="{Binding Source={x:Reference ParentBindingContext},
+                                                Path=BindingContext.EditClick}"
+                xct:TouchEffect.CommandParameter="{x:Reference currentNet}"
+                Margin="5,5,5,5"
+                CornerRadius="2"
+                HasShadow="True">
+                <Grid 
+                    RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                        <ColumnDefinition Width="40"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Image
+                        Grid.Column="0"
+                        Grid.RowSpan="2"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"
+                        Source="CurrentConnection.png"
+                    >
+                    </Image>
+
+                    <Label 
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        TextColor="White"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="StartAndExpand"
+                        Text="{Binding Name}">
+
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        TextColor="White"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start"
+                        Text="{Binding Server}">
+
+                    </Label>
+
+                    <ActivityIndicator
+                        Grid.RowSpan="2"
+                        Grid.Column="3"
+                        x:Name="loadingActivityIndicator"
+                        Color="White"
+                        VerticalOptions="Center"
+                        HorizontalOptions="End"
+                        >
+                    </ActivityIndicator>
+                </Grid>
+            </Frame>
+            <ListView
+                 x:Name="availibleNetList"
+                 HasUnevenRows="True"
+                 SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame
+                                Padding="10"
+                                x:Name="ParentFrame"
+                                xct:TouchEffect.AnimationDuration="350"
+                                xct:TouchEffect.PressedAnimationDuration="20"
+                                xct:TouchEffect.PressedOpacity="0.5"
+                                xct:TouchEffect.Command="{Binding Source={x:Reference ParentBindingContext},
+                                                Path=BindingContext.EditClick}"
+                                xct:TouchEffect.CommandParameter="{x:Reference ParentFrame}"
+                                HasShadow="True"
+                                Margin="5,5,5,5"
+                                CornerRadius="2">
+                                <Grid
+                                    RowSpacing="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Image
+                                        Grid.Column="0"
+                                        Grid.RowSpan="2"
+                                        Source="AnyConnection.png">
+
+                                    </Image>
+                                    <Label 
+                                        Grid.Column="1"
+                                        Grid.Row="0"
+                                        Grid.RowSpan="2"
+                                        Text="{Binding Name}">
+                                        
+                                    </Label>
+                                    <Label
+                                        Grid.Column="1"
+                                        Grid.Row="1"
+                                        HorizontalOptions="StartAndExpand"
+                                        Text="{Binding Server}">
+                                        
+                                    </Label>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
+
+

@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:customcontrols="clr-namespace:INDELAPPEnd.CustomControls"
+             NavigationPage.HasNavigationBar="True"
+             NavigationPage.HasBackButton="False"
+             BackgroundColor="White"
+             x:Class="INDELAPPEnd.Pages.SearchPage"
+             Title="Поиск">
+
+
+    <NavigationPage.TitleView>
+        <customcontrols:RoundedEntryWhite            
+            HorizontalOptions="FillAndExpand"
+            x:Name="roundedSearchBar"
+            Placeholder="Поиск по:"
+            PlaceholderColor="#c2c2c2"
+            TextColor="White"
+            Completed="Search_Clicked">
+        </customcontrols:RoundedEntryWhite>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem
+            Clicked="Search_Clicked"
+            IconImageSource="search.png">
+        </ToolbarItem>
+        
+        <ToolbarItem 
+            Text="По имени" 
+            Order="Secondary"
+            Clicked="ByName_Clicked">
+        </ToolbarItem>
+        
+        <ToolbarItem 
+            Text="По номеру RTU"
+            Order="Secondary"
+            Clicked="ByRTU_Clicked">
+        </ToolbarItem>
+        
+        <ToolbarItem 
+            Text="По номеру телефона" 
+            Order="Secondary"
+            Clicked="ByPhoneNumber_Clicked">
+        </ToolbarItem>
+        
+        <ToolbarItem 
+            Text="По номеру прибора" 
+            Order="Secondary"
+            Clicked="ByDeviceNumber_Clicked">
+        </ToolbarItem>
+        
+        <ToolbarItem 
+            Text="По IP адресу" 
+            Order="Secondary"
+            Clicked="ByIPAddress_Clicked">
+        </ToolbarItem>
+        
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <AbsoluteLayout
+                x:Name="noResultHint"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand">
+                <Label
+                    TextColor="#337ab7"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Text="По вашему запросу ничего не найдено.">
+                </Label>
+            </AbsoluteLayout>
+            <ActivityIndicator
+                    x:Name="loadingIndicator"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
+                    Color="#337ab7">
+            </ActivityIndicator>
+            <ListView 
+                x:Name="Suggestions"
+                ItemTapped="SelectedObject"
+                VerticalScrollBarVisibility="Never"
+                HasUnevenRows="True"
+                SeparatorVisibility="None"
+                >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="2">
+                                <Frame Padding="10,1,10,1">
+                                    <Grid RowSpacing="1">
+                                        
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                            <RowDefinition Height="20"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <Label 
+                                            Text="{Binding Name}"
+                                            FontAttributes="Bold"
+                                            HorizontalTextAlignment="Start"
+                                            FontSize="Body"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="2"
+                                            Grid.Row="0">
+                                            
+                                        </Label>
+                                        
+                                        <Label 
+                                            Text="RTU:"
+                                            TextColor="Black"
+                                            HorizontalTextAlignment="Start"
+                                            Grid.Column="0"
+                                            Grid.Row="1">
+                                            
+                                        </Label>
+                                        
+                                        <Label 
+                                            Text="{Binding Device.RTU}"
+                                            HorizontalTextAlignment="Start"
+                                            Grid.Column="1"
+                                            Grid.Row="1">
+                                            
+                                        </Label>
+                                        
+                                        <Label 
+                                            Text="Номер телефона:"
+                                            TextColor="Black"
+                                            HorizontalTextAlignment="Start"
+                                            Grid.Column="0"
+                                            Grid.Row="2">
+                                            
+                                        </Label>
+                                        
+                                        <Label 
+                                            Text="{Binding Device.Connection.PhoneNumber}"
+                                            HorizontalTextAlignment="Start"
+                                            Grid.Column="1"
+                                            Grid.Row="2">
+                                            
+                                        </Label>
+                                        
+                                        <Label
+                                            Text="IP адрес"
+                                            TextColor="Black"
+                                            HorizontalTextAlignment="Start"
+                                            Grid.Column="0"
+                                            Grid.Row="3">
+                                            
+                                        </Label>
+                                        
+                                        <Label 
+                                            Text="{Binding Device.Connection.IPAddress}"
+                                            HorizontalTextAlignment="Start"
+                                            Grid.Column="1"
+                                            Grid.Row="3">
+                                            
+                                        </Label>
+
+                                    </Grid>
+                                </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

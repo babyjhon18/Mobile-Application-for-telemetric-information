@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="INDELAPPEnd.Pages.UtilsPage.PollStatusPage"
+             BackgroundColor="#66C1C1C1"
+             Padding="20">
+    <ContentPage.Content>
+        <StackLayout
+            VerticalOptions="CenterAndExpand">
+            <Frame 
+                Padding="10"
+                VerticalOptions="Center">
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="40"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Image
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            IsAnimationPlaying="True"
+                            VerticalOptions="CenterAndExpand"
+                            Source="{Binding ImageSource}">
+                        </Image>
+
+                        <Label
+                            Margin="5,0,0,0"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            VerticalOptions="CenterAndExpand"
+                            FontSize="Subtitle"
+                            Text="{Binding Status}"
+                            TextColor="{Binding StatusTextColor}"
+                            >
+                        </Label>
+                        <ImageButton
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            x:Name="backButton"
+                            VerticalOptions="CenterAndExpand"
+                            CornerRadius="2"
+                            Source="CloseCross.png"
+                            BackgroundColor="Transparent"
+                            Clicked="BackButtonClicked"
+                        ></ImageButton>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

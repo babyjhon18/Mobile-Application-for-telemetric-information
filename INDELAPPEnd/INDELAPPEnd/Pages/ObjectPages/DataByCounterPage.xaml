@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasBackButton="True"
+             NavigationPage.HasNavigationBar="True"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="INDELAPPEnd.Pages.ObjectPages.DataByCounterPage">
+
+    
+    
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <AbsoluteLayout
+                x:Name="noDataHint"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand">
+                <Grid
+                    VerticalOptions="CenterAndExpand"
+                    RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label
+                        Grid.Row="1"
+                        TextColor="Maroon"
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        Text="Внимание! По вашему запросу ничего не найдено.">
+                    </Label>
+                    <Image 
+                        Grid.Row="0"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="StartAndExpand"
+                        Source="DataErrorCounter.png">
+
+                    </Image>
+                </Grid>
+            </AbsoluteLayout>
+            <ActivityIndicator
+                    x:Name="loadingIndicator"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand"
+                    Color="#337ab7">
+            </ActivityIndicator>
+            <Grid
+                x:Name="dataGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <CollectionView
+                    Grid.Row="0"
+                    SelectedItem="{Binding SelectedArchiveType}"
+                    SelectionMode="Single"
+                    x:Name="archiveTypeCollectionView">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout 
+                            Orientation="Horizontal"
+                            ItemSpacing="2">
+                        </LinearItemsLayout>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame
+                                Padding="8"
+                                CornerRadius="5"
+                                xct:TouchEffect.PressedScale="0.97"
+                                xct:TouchEffect.AnimationDuration="150"
+                                xct:TouchEffect.PressedAnimationDuration="20"
+                                xct:TouchEffect.PressedOpacity="0.5">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup Name="CommonStates">
+                                        <VisualState Name="Normal">
+                                            <VisualState.Setters>
+                                                <Setter Property="BackgroundColor" Value="#c2c2c2" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState Name="Selected">
+                                            <VisualState.Setters>
+                                                <Setter Property="BackgroundColor" Value="#337ab7" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <Label 
+                                    TextColor="White"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"
+                                    Text="{Binding ArchiveTypeString}">
+
+                                </Label>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Frame
+                    x:Name="dataFrame"
+                    Grid.Row="1"
+                    HasShadow="True"
+                    Padding="5">
+                    <Grid 
+                        ColumnSpacing="10"
+                        RowSpacing="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label 
+                            HorizontalTextAlignment="Start"
+                            FontAttributes="Bold"
+                            Margin="5"
+                            Grid.Row="0"  
+                            Grid.Column="0"
+                            Text="Дата и время показаний">
+                            
+                        </Label>
+                        <Label
+                            HorizontalTextAlignment="Start"
+                            FontAttributes="Bold"
+                            Margin="5"
+                            Grid.Row="0"  
+                            Grid.Column="1"
+                            Text="{Binding TimeStampString}"
+                            >
+                        </Label>
+                        <ListView
+                            Grid.Row="1"
+                            Grid.ColumnSpan="2"
+                            ItemsSource="{Binding Fields}"
+                            VerticalScrollBarVisibility="Never"
+                            HasUnevenRows="True">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid
+                                            BackgroundColor="{Binding Color}"
+                                            ColumnSpacing="10"
+                                            RowSpacing="10">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Label
+                                                Margin="5"
+                                                Grid.Column="0"
+                                                HorizontalTextAlignment="Start"
+                                                Text="{Binding Name}">
+
+                                            </Label>
+
+                                            <Label
+                                                Margin="5"
+                                                Grid.Column="1"
+                                                HorizontalTextAlignment="Start"
+                                                Text="{Binding Value}">
+
+                                            </Label>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                </Frame>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:INDELAPPEnd.CustomControls"
+             x:Name="_PollPage"
+             x:Class="INDELAPPEnd.Pages.ObjectPages.PollPage">
+
+    <ContentPage.Content>
+        <StackLayout
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand">
+            <AbsoluteLayout
+                x:Name="noCountersHint"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand">
+                <Label
+                    TextColor="#337ab7"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Text="У вас нет приборов учета для опроса.">
+                </Label>
+            </AbsoluteLayout>
+            <ScrollView
+                x:Name="scrollViewPoll" 
+                VerticalOptions="FillAndExpand">
+                <StackLayout
+                    VerticalOptions="FillAndExpand">
+                    <StackLayout 
+                        Spacing="0"
+                        Margin="4,5,0,0"
+                        VerticalOptions="Start"
+                        HorizontalOptions="FillAndExpand"
+                        x:Name="objectPollStackLayout">
+                    </StackLayout>
+                
+                    <StackLayout 
+                        RadioButtonGroup.GroupName="ArchiveType"
+                        Spacing="0"
+                        Margin="4,2,0,0"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Start">
+                        <Label
+                            Text="Тип данных:"
+                            Margin="5,15,0,5"
+                            TextColor="Black"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center"
+                            FontSize="Subtitle"
+                            ></Label>
+                        <RadioButton
+                            x:Name="Current"
+                            CheckedChanged="ArchiveType_CheckedChanged"
+                            Value="Текущие"
+                            FontSize="14"
+                            Content="Текущие">
+                        </RadioButton>
+                        <RadioButton
+                            x:Name="Archive"
+                            CheckedChanged="ArchiveType_CheckedChanged"
+                            Value="Архивные"
+                            FontSize="14"
+                            Content="Архивные">
+                        </RadioButton>
+                    </StackLayout>
+                
+                    <StackLayout
+                        Margin="4,2,0,0"
+                        x:Name="archiveTypeFields"
+                        VerticalOptions="StartAndExpand">
+                    
+                        <Label
+                            Margin="5,15,0,5"
+                            Text="Количество записей архива:"
+                            TextColor="Black"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Start"
+                            FontSize="Subtitle"
+                            >
+                        
+                        </Label>
+
+                        <Grid
+                            VerticalOptions="FillAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="37"></RowDefinition>
+                                <RowDefinition Height="37"></RowDefinition>
+                                <RowDefinition Height="37"></RowDefinition>    
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40"></ColumnDefinition>
+                                <ColumnDefinition Width="80"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                    
+                            <CheckBox
+                                x:Name="dayCheck"
+                                CheckedChanged="Check_CheckedChanged"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Color="#337ab7">
+                            </CheckBox>
+
+                            <Label
+                                Margin="-12,0,0,0"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Text="Суточного"
+                                FontAttributes="None"
+                                VerticalTextAlignment="Center"
+                                FontSize="Default"
+                                TextColor="Black"
+                                >
+                            </Label>
+
+                            <Frame
+                                Margin="-12,0,12,0"
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                CornerRadius="5"
+                                BorderColor="#c2c2c2"
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="FillAndExpand"
+                                BackgroundColor="Transparent">
+
+                            </Frame>
+
+                            <controls:RoundedEntryPrimary
+                                TextChanged="Entry_TextChanged"
+                                Margin="-12,0,12,0"
+                                x:Name="dayEntry"
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                HorizontalTextAlignment="Start"
+                                VerticalTextAlignment="Center"
+                                HorizontalOptions="FillAndExpand"
+                                TextColor="Black"
+                                FontSize="Subtitle"
+                                        >
+                            </controls:RoundedEntryPrimary>
+
+                            <CheckBox
+                                x:Name="hoursCheck"
+                                CheckedChanged="Check_CheckedChanged"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Color="#337ab7">
+                            </CheckBox>
+
+                            <Label
+                                Margin="-12,0,0,0"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Text="Часового"
+                                FontAttributes="None"
+                                VerticalTextAlignment="Center"
+                                FontSize="Default"
+                                TextColor="Black"
+                                >
+                            </Label>
+
+                            <Frame
+                                Margin="-12,0,12,0"
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                CornerRadius="5"
+                                BorderColor="#c2c2c2"
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="FillAndExpand"
+                                BackgroundColor="Transparent">
+
+                            </Frame>
+
+                            <controls:RoundedEntryPrimary
+                                TextChanged="Entry_TextChanged"
+                                Margin="-12,0,12,0"
+                                x:Name="hoursEntry"
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                HorizontalTextAlignment="Start"
+                                VerticalTextAlignment="Center"
+                                HorizontalOptions="FillAndExpand"
+                                TextColor="Black"
+                                FontSize="Subtitle"
+                                        >
+                            </controls:RoundedEntryPrimary>
+
+                            <CheckBox
+                                x:Name="minutesCheck"
+                                CheckedChanged="Check_CheckedChanged"
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Color="#337ab7">
+                            </CheckBox>
+
+                            <Label
+                                Margin="-12,0,0,0"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Text="Минутного"
+                                FontAttributes="None"
+                                VerticalTextAlignment="Center"
+                                FontSize="Default"
+                                TextColor="Black"
+                                >
+                            </Label>
+
+                            <Frame
+                                Margin="-12,0,12,0"
+                                Grid.Row="2"
+                                Grid.Column="2"
+                                CornerRadius="5"
+                                BorderColor="#c2c2c2"
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="FillAndExpand"
+                                BackgroundColor="Transparent">
+
+                            </Frame>
+
+                            <controls:RoundedEntryPrimary
+                                TextChanged="Entry_TextChanged"
+                                Margin="-12,0,12,0"
+                                x:Name="minutesEntry"
+                                Grid.Row="2"
+                                Grid.Column="2"
+                                HorizontalTextAlignment="Start"
+                                VerticalTextAlignment="Center"
+                                HorizontalOptions="FillAndExpand"
+                                TextColor="Black"
+                                FontSize="Subtitle"
+                                        >
+                            </controls:RoundedEntryPrimary>
+
+                        </Grid>
+
+                    </StackLayout>
+
+                    <StackLayout
+                        VerticalOptions="EndAndExpand">
+                        <Button 
+                            x:Name="pollButton"
+                            Scale="0.8"
+                            Font="18"
+                            HorizontalOptions="CenterAndExpand"
+                            VerticalOptions="Center"
+                            CornerRadius="5"
+                            Text="Опросить"
+                            TextColor="White"
+                            BackgroundColor="#337ab7"
+                            Clicked="AcceptButton_Clicked"
+                        ></Button>
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

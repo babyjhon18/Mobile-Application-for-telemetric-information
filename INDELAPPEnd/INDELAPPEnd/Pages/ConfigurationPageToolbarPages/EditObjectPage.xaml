@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             NavigationPage.HasNavigationBar="True"
+             NavigationPage.HasBackButton="True"
+             BackgroundColor="White"
+             Title="{Binding TitleOfPage}"
+             xmlns:control="clr-namespace:INDELAPPEnd.CustomControls"
+             x:Class="INDELAPPEnd.Pages.ConfigurationPageToolbarPages.EditObjectPage"
+             >
+    
+    <ContentPage.Content>
+        <ScrollView
+            VerticalScrollBarVisibility="Never">
+            <StackLayout
+                Padding="10">
+                <Grid
+                    x:Name="objectInfo"
+                    RowSpacing="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Text="Объект"
+                        FontSize="Medium"
+                        VerticalTextAlignment="Center"
+                        FontAttributes="Bold"
+                        TextColor="#337ab7"
+                            >
+                    </Label>
+
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        Text="Название"
+                        FontAttributes="None"
+                        VerticalTextAlignment="Center"
+                        TextColor="Black"
+                        >
+                    </Label>
+
+                    <Frame
+                        CornerRadius="5"
+                        BorderColor="#c2c2c2"
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="1"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="Transparent">
+                    </Frame>
+
+
+                    <control:RoundedEntryPrimary
+                        TextChanged="AnyEntry_TextChanged"
+                        x:Name="objectNameEntry"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        VerticalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="Black"
+                        FontSize="Subtitle"
+                            >
+                    </control:RoundedEntryPrimary>
+
+
+                    <Label
+                        Grid.Row="2"
+                        Grid.ColumnSpan="2"
+                        Text="Код дома"
+                        FontAttributes="None"
+                        VerticalTextAlignment="Center"
+                        TextColor="Black"
+                        >
+                    </Label>
+
+                    <Frame
+                        CornerRadius="5"
+                        BorderColor="#c2c2c2"
+                        Grid.Row="2"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="1"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="Transparent">
+                    </Frame>
+
+                    <control:RoundedEntryPrimary
+                        TextChanged="AnyEntry_TextChanged"
+                        x:Name="houseCodeEntry"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        VerticalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="Black"
+                        FontSize="Subtitle"
+                            >
+                    </control:RoundedEntryPrimary>
+
+                    <Label
+                        Grid.Row="3"
+                        Grid.ColumnSpan="2"
+                        Text="Место"
+                        FontAttributes="None"
+                        VerticalTextAlignment="Center"
+                        TextColor="Black"
+                        ></Label>
+
+                    <control:RoundedEntryPrimary
+                        TextChanged="AnyEntry_TextChanged"
+                        x:Name="locationEntry"
+                        Grid.Row="3"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="1"
+                        HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="Black"
+                        FontSize="Subtitle"
+                        >
+                    </control:RoundedEntryPrimary>
+
+                    <Image 
+                        Source="expandIcon.png"
+                        Grid.Row="3"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        Grid.Column="2">
+                    </Image>
+
+                    <Frame
+                        CornerRadius="5"
+                        BorderColor="#c2c2c2"
+                        x:Name="locationFrame"
+                        Grid.Row="3"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="1"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="Transparent">
+                    </Frame>
+
+                    <Switch
+                        PropertyChanged="isActiveSwitch_PropertyChanged"
+                        x:Name="isActiveSwitch"
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        HorizontalOptions="Start"
+                        OnColor="#c2c2c2"
+                            >
+                    </Switch>
+
+                    <Label
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="1"
+                        Text="Активен"
+                        FontSize="Subtitle"
+                        VerticalTextAlignment="Center"
+                        TextColor="Black"
+                        >
+                    </Label>
+
+                    <Label
+                        Grid.Row="5"
+                        Grid.ColumnSpan="2"
+                        Text="Тип объекта"
+                        FontAttributes="None"
+                        VerticalTextAlignment="Center"
+                        TextColor="Black"
+                    ></Label>
+
+                    <control:RoundedEntryPrimary
+                        TextChanged="AnyEntry_TextChanged"
+                        x:Name="objectTypeEntry"
+                        Grid.Row="5"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="1"
+                        VerticalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="Black"
+                        FontSize="Subtitle"
+                            >
+                    </control:RoundedEntryPrimary>
+
+                    <Image 
+                        Source="expandIcon.png"
+                        Grid.Row="5"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        Grid.Column="2">
+                    </Image>
+
+                    <Frame
+                        CornerRadius="5"
+                        BorderColor="#c2c2c2"
+                        x:Name="objectTypeFrame"
+                        Grid.Row="5"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="1"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="Transparent">
+                    </Frame>
+
+                    <Label
+                        Grid.Row="6"
+                        Grid.ColumnSpan="2"
+                        Text="Потребитель"
+                        FontAttributes="None"
+                        VerticalTextAlignment="Center"
+                        TextColor="Black"
+                        ></Label>
+
+                    <control:RoundedEntryPrimary
+                        TextChanged="AnyEntry_TextChanged"
+                        x:Name="consumerEntry"
+                        Grid.Column="1"
+                        Grid.Row="6"
+                        Grid.ColumnSpan="2"
+                        VerticalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="Black"
+                        FontSize="Subtitle"
+                            >
+                    </control:RoundedEntryPrimary>
+
+                    <Image 
+                        Source="expandIcon.png"
+                        Grid.Row="6"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        Grid.Column="2">
+                    </Image>
+
+                    <Frame
+                        CornerRadius="5"
+                        BorderColor="#c2c2c2"
+                        x:Name="consumerFrame"
+                        Grid.Row="6"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="Transparent">
+                    </Frame>
+                </Grid>
+                <Grid
+                    x:Name="objectParams"
+                    RowSpacing="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Grid.Row="0"
+                        Grid.ColumnSpan="2"
+                        Text="Параметры соединения"
+                        FontSize="Medium"
+                        VerticalTextAlignment="Center"
+                        FontAttributes="Bold"
+                        TextColor="#337ab7"
+                        >
+                    </Label>
+
+                    <Label
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        Text="Номер RTU"
+                        FontAttributes="None"
+                        VerticalTextAlignment="Center"
+                        TextColor="Black"
+                    >
+                    </Label>
+
+                    <Frame
+                        CornerRadius="5"
+                        BorderColor="#c2c2c2"
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="1"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="Transparent">
+                    </Frame>
+
+                    <control:RoundedEntryPrimary
+                        TextChanged="AnyEntry_TextChanged"
+                        x:Name="RTUEntry"
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        VerticalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="Black"
+                        FontSize="Subtitle"
+                            >
+                    </control:RoundedEntryPrimary>
+
+                    <Label
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        Text="Тип соединения"
+                        FontAttributes="None"
+                        VerticalTextAlignment="Center"
+                        TextColor="Black"
+                        >
+                    </Label>
+
+                    <control:RoundedEntryPrimary
+                        TextChanged="AnyEntry_TextChanged"
+                        x:Name="connectionTypeEntry"
+                        Grid.Column="1"
+                        Grid.Row="2"
+                        Grid.ColumnSpan="2"
+                        VerticalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="Black"
+                        FontSize="Subtitle"
+                            >
+                    </control:RoundedEntryPrimary>
+
+                    <Image 
+                        Source="expandIcon.png"
+                        Grid.Row="2"
+                        HorizontalOptions="End"
+                        VerticalOptions="Center"
+                        Grid.Column="2">
+                    </Image>
+
+                    <Frame
+                        CornerRadius="5"
+                        BorderColor="#c2c2c2"
+                        x:Name="connectionTypeFrame"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="Transparent">
+                    </Frame>
+
+                    <Label
+                        IsVisible="{Binding IsVisibleGSM}"
+                        Grid.Row="3"
+                        Grid.ColumnSpan="2"
+                        Text="Номер GSM"
+                        FontAttributes="None"
+                        VerticalTextAlignment="Center"
+                        TextColor="Black"
+                        >
+                    </Label>
+
+                    <Frame
+                        IsVisible="{Binding IsVisibleGSM}"
+                        CornerRadius="5"
+                        BorderColor="#c2c2c2"
+                        Grid.Row="3"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="1"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="Transparent">
+                    </Frame>
+
+                    <control:RoundedEntryPrimary
+                        TextChanged="AnyEntry_TextChanged"
+                        IsVisible="{Binding IsVisibleGSM}"
+                        x:Name="GSMEntry"
+                        Grid.Column="1"
+                        Grid.Row="3"
+                        Grid.ColumnSpan="2"
+                        VerticalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="Black"
+                        FontSize="Subtitle"
+                            >
+                    </control:RoundedEntryPrimary>
+
+                    <Label
+                        IsVisible="{Binding IsVisibleEthernet}"
+                        Grid.Row="3"
+                        Grid.ColumnSpan="2"
+                        Text="Ethernet адрес"
+                        FontAttributes="None"
+                        VerticalTextAlignment="Center"
+                        TextColor="Black"
+                        >
+                    </Label>
+
+                    <Frame
+                        IsVisible="{Binding IsVisibleEthernet}"
+                        CornerRadius="5"
+                        BorderColor="#c2c2c2"
+                        Grid.Row="3"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="1"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="Transparent">
+                    </Frame>
+
+                    <control:RoundedEntryPrimary
+                        TextChanged="AnyEntry_TextChanged"
+                        IsVisible="{Binding IsVisibleEthernet}"
+                        x:Name="ethernetEntry"
+                        Placeholder="000.000.000.000"
+                        Grid.Column="1"
+                        Grid.Row="3"
+                        Grid.ColumnSpan="2"
+                        VerticalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="Black"
+                        FontSize="Subtitle"
+                        >
+                    </control:RoundedEntryPrimary>
+
+                    <Label
+                        IsVisible="{Binding IsVisibleIPPort}"
+                        Grid.Row="4"
+                        Grid.ColumnSpan="2"
+                        Text="Удаленный порт"
+                        FontAttributes="None"
+                        VerticalTextAlignment="Center"
+                        TextColor="Black"
+                        >
+                    </Label>
+
+                    <Frame
+                        IsVisible="{Binding IsVisibleIPPort}"
+                        CornerRadius="5"
+                        BorderColor="#c2c2c2"
+                        Grid.Row="4"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="1"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="Transparent">
+                    </Frame>
+
+                    <control:RoundedEntryPrimary
+                        TextChanged="AnyEntry_TextChanged"
+                        IsVisible="{Binding IsVisibleIPPort}"
+                        x:Name="IPPortEntry"
+                        Placeholder="от 0 до 65535"
+                        Grid.Column="1"
+                        Grid.Row="4"
+                        Grid.ColumnSpan="2"
+                        VerticalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="Black"
+                        FontSize="Subtitle"
+                        >
+                    </control:RoundedEntryPrimary>
+
+                    <Label
+                        IsVisible="{Binding IsVisibleLocalPort}"
+                        Grid.Row="5"
+                        Grid.ColumnSpan="2"
+                        Text="Локальный порт"
+                        FontAttributes="None"
+                        VerticalTextAlignment="Center"
+                        TextColor="Black"
+                        >
+                    </Label>
+
+                    <Frame
+                        IsVisible="{Binding IsVisibleLocalPort}"
+                        CornerRadius="5"
+                        BorderColor="#c2c2c2"
+                        Grid.Row="5"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="1"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="Transparent">
+                    </Frame>
+
+                    <control:RoundedEntryPrimary
+                        TextChanged="AnyEntry_TextChanged"
+                        IsVisible="{Binding IsVisibleLocalPort}"
+                        x:Name="localPortEntry"
+                        Grid.Column="1"
+                        Grid.Row="5"
+                        Grid.ColumnSpan="2"
+                        VerticalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="Black"
+                        FontSize="Subtitle"
+                        Placeholder="от 0 до 65535"
+                        >
+                    </control:RoundedEntryPrimary>
+
+                </Grid>
+                <Button 
+                    x:Name="acceptButton"
+                    VerticalOptions="EndAndExpand"
+                    HorizontalOptions="Center"
+                    CornerRadius="5"
+                    Text="Подтвердить"
+                    TextColor="White"
+                    BackgroundColor="#337ab7"
+                    Clicked="EditObjectButtonClick"
+                >
+                </Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

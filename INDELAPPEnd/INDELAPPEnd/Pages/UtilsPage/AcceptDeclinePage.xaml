@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="INDELAPPEnd.Pages.UtilsPage.AcceptDeclinePage"
+             BackgroundColor="#66C1C1C1"
+             Padding="20">
+    
+    <ContentPage.Content>
+        <Frame 
+            Padding="10"
+            VerticalOptions="Center">
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+
+                <Label 
+                    x:Name="labelControl"
+                    FontSize="16"
+                    FontAttributes="None"
+                    VerticalTextAlignment="Center"
+                    TextColor="Black">
+
+                </Label>
+                    
+                <StackLayout 
+                    Orientation="Horizontal"
+                    VerticalOptions="EndAndExpand"
+                    HorizontalOptions="EndAndExpand">
+
+                    <Button
+                        x:Name="declineButton"
+                        Scale="0.8"
+                        Font="18"
+                        HorizontalOptions="FillAndExpand"
+                        CornerRadius = "5"
+                        FontAttributes="None"
+                        Text = "Нет"
+                        TextColor = "White"
+                        BackgroundColor = "#D9534F"
+                        Clicked="DeclineButtonClicked"
+                        >
+                    </Button>
+
+                    <Button
+                        x:Name="acceptButton"
+                        Scale="0.8"
+                        Font="18"
+                        Margin="-20,0,-5,0"
+                        HorizontalOptions="FillAndExpand"
+                        CornerRadius = "5"
+                        FontAttributes="None"
+                        Text = "Да"
+                        TextColor = "White"
+                        BackgroundColor = "#337ab7"
+                        Clicked="AcceptButtonClicked"
+                        >
+                    </Button>
+
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+    </ContentPage.Content>
+</ContentPage>

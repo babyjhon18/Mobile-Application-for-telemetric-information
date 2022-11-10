@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            x:Name="objectTabbedPage"
+            SelectedTabColor="#337ab7"
+            UnselectedTabColor="#C2C2C2"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            xmlns:local="clr-namespace:INDELAPPEnd.Pages.ObjectPages"
+            BackgroundColor="White"
+            android:TabbedPage.IsSwipePagingEnabled="False"
+            x:Class="INDELAPPEnd.Pages.ObjectPages.ObjectTabbedPage">
+
+    <TabbedPage.Children>
+        <local:ConfigurationPage
+            x:Name="configurationPage"
+            Title="Конфигурация" 
+            Icon="config.png" >
+        </local:ConfigurationPage>
+        
+        <local:DataPage
+            x:Name="dataPage"
+            Title="Данные"
+            Icon="data.png">
+            
+        </local:DataPage>
+        
+        <local:PollPage
+            x:Name="pollPage"
+            Title="Опрос" 
+            Icon="poll.png">
+        </local:PollPage>
+        
+        <local:MapPage
+            x:Name="mapPage"
+            Title="Карта"
+            Icon="map.png">
+            
+        </local:MapPage>
+    </TabbedPage.Children>
+    
+</TabbedPage>

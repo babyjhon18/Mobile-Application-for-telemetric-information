@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="INDELAPPEnd.Pages.EditConfigurationPage"
+             xmlns:controls="clr-namespace:INDELAPPEnd.CustomControls"
+             BackgroundColor="White"
+             NavigationPage.HasBackButton="False">
+
+    <ScrollView
+        VerticalScrollBarVisibility="Never">
+        <StackLayout 
+            x:Name="mainView"
+            Padding="10">
+            <Grid
+                RowSpacing="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="Название"
+                    FontAttributes="None"
+                    VerticalTextAlignment="Center"
+                    FontSize="Default"
+                    TextColor="Black"
+                    >
+                </Label>
+
+
+                <Frame
+                    CornerRadius="5"
+                    BorderColor="#c2c2c2"
+                    Grid.Row="0"
+                    Grid.ColumnSpan="2"
+                    Grid.Column="1"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="Transparent">
+                </Frame>
+
+                <controls:RoundedEntryPrimary
+                    x:Name="networkNameEntry"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Center"
+                    HorizontalOptions="FillAndExpand"
+                    TextColor="Black"
+                    FontSize="Subtitle"
+                        >
+                </controls:RoundedEntryPrimary>
+
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="Сервер"
+                    FontAttributes="None"
+                    VerticalTextAlignment="Center"
+                    FontSize="Default"
+                    TextColor="Black"
+                    >
+                </Label>
+
+                <Frame
+                    CornerRadius="5"
+                    BorderColor="#c2c2c2"
+                    Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    Grid.Column="1"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="Transparent">
+                </Frame>
+
+                <controls:RoundedEntryPrimary
+                    x:Name="serverEntry"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Center"
+                    HorizontalOptions="FillAndExpand"
+                    TextColor="Black"
+                    FontSize="Subtitle"
+                        >
+                </controls:RoundedEntryPrimary>
+
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Text="Порт"
+                    FontAttributes="None"
+                    VerticalTextAlignment="Center"
+                    FontSize="Default"
+                    TextColor="Black"
+                    >
+                </Label>
+
+
+                <Frame
+                    CornerRadius="5"
+                    BorderColor="#c2c2c2"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    Grid.Column="1"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="Transparent">
+                </Frame>
+
+                <controls:RoundedEntryPrimary
+                    x:Name="portEntry"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Center"
+                    HorizontalOptions="FillAndExpand"
+                    TextColor="Black"
+                    FontSize="Subtitle"
+                        >
+                </controls:RoundedEntryPrimary>
+
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Text="Пользователь"
+                    FontAttributes="None"
+                    VerticalTextAlignment="Center"
+                    FontSize="Default"
+                    TextColor="Black"
+                    >
+                </Label>
+
+                <Frame
+                    CornerRadius="5"
+                    BorderColor="#c2c2c2"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="2"
+                    Grid.Column="1"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="Transparent">
+                </Frame>
+
+                <controls:RoundedEntryPrimary
+                    x:Name="usernameEntry"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Center"
+                    HorizontalOptions="FillAndExpand"
+                    TextColor="Black"
+                    FontSize="Subtitle"
+                        >
+                </controls:RoundedEntryPrimary>
+
+                <Label
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Text="Пароль"
+                    FontAttributes="None"
+                    VerticalTextAlignment="Center"
+                    FontSize="Default"
+                    TextColor="Black"
+                    >
+                </Label>
+
+                <Frame
+                    CornerRadius="5"
+                    BorderColor="#c2c2c2"
+                    Grid.Row="4"
+                    Grid.ColumnSpan="2"
+                    Grid.Column="1"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    BackgroundColor="Transparent">
+                </Frame>
+
+                <controls:RoundedEntryPrimary
+                    x:Name="passwordEntry"
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Center"
+                    HorizontalOptions="FillAndExpand"
+                    TextColor="Black"
+                    FontSize="Subtitle"
+                        />
+
+                <ImageButton
+                    BackgroundColor="Transparent"
+                    Clicked="HidenPassword"
+                    Padding="5"
+                    x:Name="passwordViewImage"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    >
+                </ImageButton>
+                
+            </Grid>
+
+            <StackLayout 
+                x:Name="switchStackLayout"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal">
+                <Switch
+                    HorizontalOptions="EndAndExpand"
+                    x:Name="byDefaultSwitch"
+                    OnColor="#c2c2c2"
+                    IsToggled="{Binding ByDefault}"
+                    >
+                </Switch>
+
+                <Label
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    x:Name="byDefautLabel"
+                    Text="Конфигурация по умолчанию"
+                    TextColor="Black"
+                    FontSize="Default"
+                        >
+                </Label>
+            </StackLayout>
+
+            <Button 
+                Scale="0.8"
+                Font="18"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                CornerRadius="5"
+                Text="Подтвердить"
+                TextColor="White"
+                BackgroundColor="{Binding PrimaryColor}"
+                Command="{Binding AcceptNewConfiguration}"
+                >
+            </Button>
+
+            <ActivityIndicator
+                Grid.Row="4"
+                x:Name="loadingIndicator"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Color="#337ab7">
+            </ActivityIndicator>
+            
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:control="clr-namespace:INDELAPPEnd.CustomControls"
+             x:Class="INDELAPPEnd.Pages.UtilsPage.SelectionPage"
+             NavigationPage.HasNavigationBar="True"
+             NavigationPage.HasBackButton="True"
+             BackgroundColor="#66C1C1C1"
+             Padding="20">
+
+    <ContentPage.Content>
+        <Frame
+            Padding="10"
+            VerticalOptions="Center">
+
+            <StackLayout
+                RadioButtonGroup.GroupName="CloneGroup"
+                RadioButtonGroup.SelectedValue="{Binding Selection}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+
+                <RadioButton
+                    x:Name="name_Original"
+                    IsChecked="True"
+                    CheckedChanged="CloneType_CheckChanged"
+                    Margin = "4,4"
+                    Content="Название оригинала + '_копия'">
+                </RadioButton>
+
+                <RadioButton
+                    x:Name="rtu_Original"
+                    CheckedChanged="CloneType_CheckChanged"
+                    Margin = "4,4"
+                    Content="RTU + Адрес RTU">
+                </RadioButton>
+
+                <RadioButton
+                    x:Name="newName_Original"
+                    CheckedChanged="CloneType_CheckChanged"
+                    Margin = "4,4"
+                    Content="Задать название объекта">
+                </RadioButton>
+
+                <Grid
+                    RowSpacing="5">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        x:Name="conditionLabel"
+                        FontAttributes="None"
+                        VerticalTextAlignment="Center"
+                        TextColor="Black"
+                            >
+
+                    </Label>
+
+                    <Frame
+                        CornerRadius="5"
+                        x:Name="conditionFrame"
+                        BorderColor="#c2c2c2"
+                        Grid.Row="0"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="1"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="Transparent">
+                    </Frame>
+
+
+                    <control:RoundedEntryPrimary
+                        x:Name="conditionEntry"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        VerticalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="Black"
+                        FontSize="Subtitle"
+                            >
+                    </control:RoundedEntryPrimary>
+
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        x:Name="countLabel"
+                        Text="Количество копий"
+                        FontAttributes="None"
+                        VerticalTextAlignment="Center"
+                        TextColor="Black"
+                            >
+
+                    </Label>
+
+                    <Frame
+                        CornerRadius="5"
+                        BorderColor="#c2c2c2"
+                        Grid.Row="1"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="1"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        BackgroundColor="Transparent">
+                    </Frame>
+
+
+                    <control:RoundedEntryPrimary
+                        x:Name="cloneCountEntry"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        VerticalTextAlignment="Center"
+                        HorizontalOptions="FillAndExpand"
+                        TextColor="Black"
+                        FontSize="Subtitle"
+                            >
+                    </control:RoundedEntryPrimary>
+
+                </Grid>
+
+                <StackLayout 
+                    Orientation="Horizontal"
+                    VerticalOptions="EndAndExpand"
+                    HorizontalOptions="EndAndExpand">
+
+                    <Button
+                        Scale="0.8"
+                        Font="18"
+                        HorizontalOptions="FillAndExpand"
+                        FontAttributes="None"
+                        CornerRadius = "5"
+                        Text = "Отмена"
+                        TextColor = "White"
+                        BackgroundColor = "#D9534F"
+                        Clicked="DeclineButtonClicked"
+                            >
+                    </Button>
+
+                    <Button
+                        Scale="0.8"
+                        Font="18"
+                        Margin="-20,0,0,0"
+                        HorizontalOptions="FillAndExpand"
+                        FontAttributes="None"
+                        CornerRadius = "5"
+                        Text = "Ок"
+                        TextColor = "White"
+                        BackgroundColor = "#337ab7"
+                        Clicked="AcceptButtonClicked"
+                            >
+                    </Button>
+
+                </StackLayout>
+
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+    
+</ContentPage>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewModel="clr-namespace:INDELAPPEnd.Pages"
+             x:Class="INDELAPPEnd.Pages.RegionsPage"
+             BackgroundColor="White"
+             NavigationPage.HasBackButton="False">
+
+    <ContentPage.ToolbarItems>
+        
+        <ToolbarItem IconImageSource="search.png"
+                     Clicked="SearchButtonClicked">
+        </ToolbarItem>
+        
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <RefreshView
+                RefreshColor="#337AB7"
+                Refreshing="Refresh_Refreshing"
+                x:Name="Refresh">
+                <ListView 
+                     x:Name="regionList"
+                     HasUnevenRows="True"
+                     SeparatorVisibility="None"
+                     ItemTapped="SelectedRegion"
+                     VerticalScrollBarVisibility="Never"
+                     >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="2">
+                                    <Frame Padding="10">
+                                        <Label
+                                           Text="{Binding name}"       
+                                           TextColor="Black"
+                                           FontSize="Body"
+                                           HorizontalOptions="StartAndExpand"
+                                           VerticalOptions="StartAndExpand"
+                                           HorizontalTextAlignment="Start"
+                                           VerticalTextAlignment="Start">
+                                        </Label>
+                                    </Frame>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </RefreshView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

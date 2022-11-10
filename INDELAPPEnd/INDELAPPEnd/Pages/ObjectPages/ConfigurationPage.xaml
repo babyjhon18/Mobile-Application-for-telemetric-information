@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewModel="clr-namespace:INDELAPPEnd.Pages.ObjectPages"
+             x:Class="INDELAPPEnd.Pages.ObjectPages.ConfigurationPage"
+             x:Name="_ConfigurationPage"
+             BackgroundColor="White"
+             >
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <ActivityIndicator
+                x:Name="loadingIndicator"
+                HorizontalOptions="Center"
+                VerticalOptions="CenterAndExpand"
+                Color="#337ab7">
+            </ActivityIndicator>
+            <Grid 
+                    VerticalOptions="CenterAndExpand"
+                x:Name="objectConfigurationGrid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="5"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="15"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label
+                    Padding="10,0,0,0"
+                    Text="RTU:"
+                    Grid.ColumnSpan="2"
+                    Grid.Column="0" 
+                    Grid.Row="0"
+                    HorizontalOptions="StartAndExpand" 
+                    VerticalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    FontAttributes="Bold"
+                    TextColor="Black" 
+                    >
+                </Label>
+
+                <Label 
+                    Grid.Column="3" 
+                    Grid.Row="0" 
+                    Grid.ColumnSpan="2"
+                    Text="{Binding Device.RTU}"
+                    TextColor="Black"
+                    HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="Center"
+                    HorizontalTextAlignment="Start"
+                    VerticalTextAlignment="Center">
+                </Label>
+
+                <Label
+                    Padding="10,0,0,0"
+                    Text="Статус работы:"
+                    Grid.ColumnSpan="2"
+                    Grid.Column="0" 
+                    Grid.Row="1"
+                    HorizontalOptions="StartAndExpand" 
+                    VerticalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    FontAttributes="Bold"
+                    TextColor="Black" >
+                </Label>
+
+                <Label 
+                    Grid.ColumnSpan="2"
+                    Grid.Column="3" 
+                    Grid.Row="1" 
+                    TextColor="Black"
+                    Text="{Binding ActiveText}"
+                    >
+                </Label>
+
+                <Label
+                    Padding="10,0,0,0"
+                    Text="Статус опроса:"
+                    Grid.ColumnSpan="2"
+                    Grid.Column="0" 
+                    Grid.Row="2"
+                    HorizontalOptions="StartAndExpand" 
+                    VerticalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    FontAttributes="Bold"
+                    TextColor="Black">
+                </Label>
+
+                <Label 
+                    Padding="25,0,0,0"
+                    Grid.ColumnSpan="2"
+                    Grid.Column="3" 
+                    Grid.Row="2" 
+                    Text="{Binding LastRequestStatusText}" 
+                    TextColor="{Binding ColorOfText}">
+                </Label>
+
+                <Image 
+                    Source="{Binding IconPath}" 
+                    Grid.Column="3" 
+                    Grid.Row="2"
+                    IsAnimationPlaying="True"
+                    HorizontalOptions="StartAndExpand" 
+                    VerticalOptions="Center"></Image>
+
+                <Label
+                    Padding="10,0,0,0"
+                    Text="Дата опроса:"
+                    Grid.ColumnSpan="2"
+                    Grid.Column="0" 
+                    Grid.Row="3"
+                    HorizontalOptions="StartAndExpand" 
+                    VerticalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    FontAttributes="Bold"
+                    TextColor="Black">
+                </Label>
+
+                <Label 
+                    Grid.ColumnSpan="3"
+                    Grid.Row="3" 
+                    Grid.Column="3"
+                    TextColor="Black"
+                    Text="{Binding LastRequestDateString}">
+
+                </Label>
+
+                <BoxView
+                    Grid.ColumnSpan="6"
+                    Grid.Row="4" 
+                    BackgroundColor="#337ab7" >
+
+                </BoxView>
+
+                <Label
+                    Text="Приборы учета"
+                    FontSize="Body"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Grid.ColumnSpan="6"
+                    Grid.Row="5"
+                    Grid.RowSpan="1"
+                    Grid.Column="0">
+
+                </Label>
+
+                <ListView 
+                    Grid.ColumnSpan="6"
+                    Grid.Row="6"
+                    x:Name="counterListView"
+                    HasUnevenRows="True"
+                    ItemsSource="{Binding Device.Counters}"
+                    ItemTapped="CounterTapped"
+                    SeparatorVisibility="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <!--Карточка с данными счетчика-->
+                                <StackLayout 
+                                    Padding="3">
+                                    <Frame 
+                                        Padding="10,1,10,1"
+                                        BackgroundColor="{Binding BackOfFrameOfCounters}">
+                                        <Grid 
+                                            BindingContext="{Binding .}"
+                                            IsEnabled="True"
+                                            RowSpacing="1">
+
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="20" ></RowDefinition>
+                                                <RowDefinition Height="20"></RowDefinition>
+                                                <RowDefinition Height="20"></RowDefinition>
+                                                <RowDefinition Height="20"></RowDefinition>
+                                                <RowDefinition Height="20"></RowDefinition>
+                                                <RowDefinition Height="2"></RowDefinition>
+                                            </Grid.RowDefinitions>
+
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                <ColumnDefinition Width="45"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+
+                                            <BoxView Grid.ColumnSpan="3"
+                                                Grid.RowSpan="6"
+                                                BackgroundColor="Transparent"
+                                                CornerRadius="10">
+                                            </BoxView>
+
+                                            <Label 
+                                                Text="Тип ПУ:"
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                TextColor="Black"
+                                                HorizontalOptions="StartAndExpand" 
+                                                VerticalOptions="Center"
+                                                HorizontalTextAlignment="Start"
+                                                VerticalTextAlignment="Center">
+                                            </Label>
+
+                                            <Label 
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                TextColor="Black"
+                                                Text="{Binding Type.Name}"
+                                                Grid.ColumnSpan="2"
+                                                HorizontalTextAlignment="Start"
+                                                VerticalTextAlignment="Center"
+                                                HorizontalOptions="StartAndExpand" 
+                                                VerticalOptions="Center">
+
+                                            </Label>
+
+                                            <Label 
+                                                Text="Описание:"
+                                                Grid.Row="1"
+                                                Grid.Column="0"
+                                                HorizontalOptions="StartAndExpand" 
+                                                VerticalOptions="Center"
+                                                HorizontalTextAlignment="Start"
+                                                VerticalTextAlignment="Center">
+
+                                            </Label>
+
+                                            <Label 
+                                                Grid.Row="1"
+                                                Grid.Column="1"
+                                                Grid.ColumnSpan="2"
+                                                Text="{Binding Name}"
+                                                TextColor="Black"
+                                                HorizontalOptions="StartAndExpand" 
+                                                VerticalOptions="Center"
+                                                HorizontalTextAlignment="Start"
+                                                VerticalTextAlignment="Center">
+
+                                            </Label>
+
+                                            <Label 
+                                                Text="Вид учета:"
+                                                Grid.Row="2"
+                                                Grid.Column="0"
+                                                HorizontalOptions="StartAndExpand" 
+                                                VerticalOptions="Center"
+                                                HorizontalTextAlignment="Start"
+                                                VerticalTextAlignment="Center">
+
+                                            </Label>
+
+                                            <Label 
+                                                Grid.Column="1"
+                                                Grid.Row="2"
+                                                Grid.ColumnSpan="2"
+                                                TextColor="Black"
+                                                Text="{Binding Accounting.Type.Name}"
+                                                HorizontalTextAlignment="Start"
+                                                VerticalTextAlignment="Center"
+                                                HorizontalOptions="StartAndExpand" 
+                                                VerticalOptions="Center">
+
+                                            </Label>
+
+                                            <Label 
+                                                Text="Статус опроса:"
+                                                Grid.Row="3"
+                                                Grid.Column="0"
+                                                HorizontalOptions="StartAndExpand" 
+                                                VerticalOptions="Center"
+                                                HorizontalTextAlignment="Start"
+                                                VerticalTextAlignment="Center">
+
+                                            </Label>
+
+                                            <Label 
+                                                Grid.Column="1"
+                                                Grid.Row="3"
+                                                Text="{Binding Status}"
+                                                TextColor="Black"
+                                                Grid.ColumnSpan="2"
+                                                MaxLines="2"
+                                                HorizontalTextAlignment="Start"
+                                                VerticalTextAlignment="Center"
+                                                HorizontalOptions="StartAndExpand" 
+                                                VerticalOptions="Center">
+
+                                            </Label>
+
+                                            <Label 
+                                                Text="Статус работы:"
+                                                Grid.Row="4"
+                                                Grid.Column="0"
+                                                HorizontalOptions="StartAndExpand" 
+                                                VerticalOptions="Center"
+                                                HorizontalTextAlignment="Start"
+                                                VerticalTextAlignment="Center">
+
+                                            </Label>
+
+                                            <Label 
+                                                Grid.Column="1"
+                                                Grid.Row="4"
+                                                Text="{Binding ActiveText}"
+                                                TextColor="Black"
+                                                Grid.ColumnSpan="2"
+                                                HorizontalTextAlignment="Start"
+                                                VerticalTextAlignment="Center"
+                                                HorizontalOptions="StartAndExpand" 
+                                                VerticalOptions="Center">
+
+                                            </Label>
+
+                                            <ImageButton
+                                                    Grid.Row="0"
+                                                    Padding="12"
+                                                    Grid.RowSpan="5"
+                                                    BackgroundColor="Transparent"
+                                                    Source="RGlyph.png"
+                                                    Grid.Column="2"
+                                                    Clicked="EditCounter_Clicked">
+                                            </ImageButton>
+
+                                        </Grid>
+                                    </Frame>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="True"
+             NavigationPage.HasBackButton="True"
+             x:Class="INDELAPPEnd.Pages.ListViewPage"
+             BackgroundColor="#66C1C1C1"
+             Padding="20">
+
+    <ContentPage.Content>
+        <Frame
+            Padding="10"
+            VerticalOptions="Center">
+            <StackLayout 
+                RadioButtonGroup.GroupName="Groups"
+                RadioButtonGroup.SelectedValue="{Binding Selection}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <ScrollView
+                        x:Name="RegionLocationFrame"
+                        VerticalScrollBarVisibility="Never">
+                    <StackLayout 
+                            x:Name="RegionLocation">
+                    </StackLayout>
+                </ScrollView>
+                <ScrollView
+                        x:Name="anyFieldFrame"
+                        VerticalScrollBarVisibility="Never">
+                    <StackLayout 
+                        x:Name="anyField">
+                    </StackLayout>
+                </ScrollView>
+                <StackLayout Orientation="Horizontal"
+                             VerticalOptions="EndAndExpand"
+                             HorizontalOptions="EndAndExpand">
+                    <Button
+                        Scale="0.8"
+                        Font="18"
+                        HorizontalOptions="FillAndExpand"
+                        FontAttributes="None"
+                        CornerRadius = "5"
+                        Text = "Отмена"
+                        TextColor = "White"
+                        BackgroundColor = "#D9534F"
+                        Clicked="DeclineButtonClicked"
+                    >
+                    </Button>
+                    <Button
+                        Scale="0.8"
+                        Font="18"
+                        Margin="-20,0,0,0"
+                        HorizontalOptions="FillAndExpand"
+                        FontAttributes="None"
+                        CornerRadius = "5"
+                        Text = "Ок"
+                        TextColor = "White"
+                        BackgroundColor = "#337ab7"
+                        Clicked="AcceptButtonClicked"
+                    >
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

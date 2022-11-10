@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <style name="MainTheme" parent="MainTheme.Base">
+  </style>
+  
+  <!-- Base theme applied no matter what API -->
+  <style name="MainTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!--If you are using revision 22.1 please use just windowNoTitle. Without android:-->
+    <item name="windowNoTitle">true</item>
+    <item name="android:navigationBarColor">#337ab7</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:itemBackground">#ffffff</item>
+    <item name="android:textColor">#000000</item>
+    <item name="android:colorActivatedHighlight">@android:color/transparent</item>
+    <!--We will be using the toolbar so no need to show ActionBar-->
+    <item name="windowActionBar">false</item>
+    <!-- Set theme colors from https://aka.ms/material-colors -->
+    <!-- colorPrimary is used for the default action bar background -->
+    <item name="colorPrimary">#337ab7</item>
+    <!-- colorPrimaryDark is used for the status bar -->
+    <item name="colorPrimaryDark">#337ab7</item>
+    <!-- colorAccent is used as the default value for colorControlActivated
+         which is used to tint widgets -->
+    <item name="colorAccent">#337ab7</item>
+    <!-- You can also set colorControlNormal, colorControlActivated
+         colorControlHighlight and colorSwitchThumbNormal. -->
+    <item name="colorControlActivated">#337ab7</item>
+    <item name="windowActionModeOverlay">true</item>
+
+    <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
+  </style>
+
+  <style name="CustomTheme"
+       parent="@style/MainTheme.Base">
+    <item name="android:actionBarTabTextStyle">@style/CustomTab</item>
+    <item name="android:textSize">5sp</item>
+  </style>
+
+  <style name="CustomTab"
+      parent="@android:style/Widget.Holo.ActionBar.TabText">
+    <item name="android:gravity">center</item>
+  </style>
+  
+  <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+    <item name="colorAccent">#377AB7</item>
+  </style>
+
+  <style name="AppTheme" parent="MainTheme">
+    <item name="android:popupMenuStyle">@style/PopupMenu</item>
+  </style>
+
+  <style name="PopupMenu" parent="@android:style/Widget.PopupMenu">
+    <item name="android:popupBackground">@android:color/white</item>
+    <item name="android:textColor">#FF01F0</item>
+    <item name="android:textSize">12sp</item>
+  </style>
+
+</resources>

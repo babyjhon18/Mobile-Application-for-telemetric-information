@@ -1,0 +1,4 @@
+<shape android:shape="rectangle" xmlns:android="http://schemas.android.com/apk/res/android">
+
+  // colorCursors is defined in the Resources/Colors file
+  <solid android:color="@color/primaryColor"></solid><size android:width="2dp" /></shape>
