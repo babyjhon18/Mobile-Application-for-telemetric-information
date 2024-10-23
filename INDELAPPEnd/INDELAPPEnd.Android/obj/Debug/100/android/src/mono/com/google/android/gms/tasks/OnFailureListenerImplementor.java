@@ -20,8 +20,9 @@ public class OnFailureListenerImplementor
 	public OnFailureListenerImplementor ()
 	{
 		super ();
-		if (getClass () == OnFailureListenerImplementor.class)
+		if (getClass () == OnFailureListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Tasks.IOnFailureListenerImplementor, Xamarin.GooglePlayServices.Tasks", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

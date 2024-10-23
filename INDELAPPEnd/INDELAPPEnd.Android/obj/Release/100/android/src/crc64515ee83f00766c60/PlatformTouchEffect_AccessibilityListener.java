@@ -22,8 +22,9 @@ public class PlatformTouchEffect_AccessibilityListener
 	public PlatformTouchEffect_AccessibilityListener ()
 	{
 		super ();
-		if (getClass () == PlatformTouchEffect_AccessibilityListener.class)
+		if (getClass () == PlatformTouchEffect_AccessibilityListener.class) {
 			mono.android.TypeManager.Activate ("Xamarin.CommunityToolkit.Android.Effects.PlatformTouchEffect+AccessibilityListener, Xamarin.CommunityToolkit", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

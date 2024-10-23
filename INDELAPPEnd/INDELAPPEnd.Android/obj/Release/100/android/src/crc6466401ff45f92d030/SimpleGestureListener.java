@@ -21,8 +21,9 @@ public class SimpleGestureListener
 	public SimpleGestureListener ()
 	{
 		super ();
-		if (getClass () == SimpleGestureListener.class)
+		if (getClass () == SimpleGestureListener.class) {
 			mono.android.TypeManager.Activate ("MR.Gestures.Android.SimpleGestureListener, MR.Gestures", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

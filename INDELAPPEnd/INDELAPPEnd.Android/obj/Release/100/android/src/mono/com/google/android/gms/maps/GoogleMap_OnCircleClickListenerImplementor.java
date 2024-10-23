@@ -20,8 +20,9 @@ public class GoogleMap_OnCircleClickListenerImplementor
 	public GoogleMap_OnCircleClickListenerImplementor ()
 	{
 		super ();
-		if (getClass () == GoogleMap_OnCircleClickListenerImplementor.class)
+		if (getClass () == GoogleMap_OnCircleClickListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Maps.GoogleMap+IOnCircleClickListenerImplementor, Xamarin.GooglePlayServices.Maps", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

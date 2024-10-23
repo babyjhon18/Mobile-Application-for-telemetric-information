@@ -20,8 +20,9 @@ public class ImageAvailableListener
 	public ImageAvailableListener ()
 	{
 		super ();
-		if (getClass () == ImageAvailableListener.class)
+		if (getClass () == ImageAvailableListener.class) {
 			mono.android.TypeManager.Activate ("Xamarin.CommunityToolkit.UI.Views.ImageAvailableListener, Xamarin.CommunityToolkit", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

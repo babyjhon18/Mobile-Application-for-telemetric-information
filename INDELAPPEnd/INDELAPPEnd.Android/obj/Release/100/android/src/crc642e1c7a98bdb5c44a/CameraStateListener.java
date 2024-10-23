@@ -22,8 +22,9 @@ public class CameraStateListener
 	public CameraStateListener ()
 	{
 		super ();
-		if (getClass () == CameraStateListener.class)
+		if (getClass () == CameraStateListener.class) {
 			mono.android.TypeManager.Activate ("Xamarin.CommunityToolkit.UI.Views.CameraStateListener, Xamarin.CommunityToolkit", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

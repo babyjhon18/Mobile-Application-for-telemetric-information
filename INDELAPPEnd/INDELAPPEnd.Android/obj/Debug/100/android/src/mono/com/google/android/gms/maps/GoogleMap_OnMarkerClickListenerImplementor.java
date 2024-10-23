@@ -20,8 +20,9 @@ public class GoogleMap_OnMarkerClickListenerImplementor
 	public GoogleMap_OnMarkerClickListenerImplementor ()
 	{
 		super ();
-		if (getClass () == GoogleMap_OnMarkerClickListenerImplementor.class)
+		if (getClass () == GoogleMap_OnMarkerClickListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Maps.GoogleMap+IOnMarkerClickListenerImplementor, Xamarin.GooglePlayServices.Maps", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

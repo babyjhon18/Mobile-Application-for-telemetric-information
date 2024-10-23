@@ -23,24 +23,27 @@ public class MapRenderer
 	public MapRenderer (android.content.Context p0, android.util.AttributeSet p1, int p2)
 	{
 		super (p0, p1, p2);
-		if (getClass () == MapRenderer.class)
+		if (getClass () == MapRenderer.class) {
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Maps.Android.MapRenderer, Xamarin.Forms.Maps.Android", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android:System.Int32, mscorlib", this, new java.lang.Object[] { p0, p1, p2 });
+		}
 	}
 
 
 	public MapRenderer (android.content.Context p0, android.util.AttributeSet p1)
 	{
 		super (p0, p1);
-		if (getClass () == MapRenderer.class)
+		if (getClass () == MapRenderer.class) {
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Maps.Android.MapRenderer, Xamarin.Forms.Maps.Android", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android", this, new java.lang.Object[] { p0, p1 });
+		}
 	}
 
 
 	public MapRenderer (android.content.Context p0)
 	{
 		super (p0);
-		if (getClass () == MapRenderer.class)
+		if (getClass () == MapRenderer.class) {
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Maps.Android.MapRenderer, Xamarin.Forms.Maps.Android", "Android.Content.Context, Mono.Android", this, new java.lang.Object[] { p0 });
+		}
 	}
 
 

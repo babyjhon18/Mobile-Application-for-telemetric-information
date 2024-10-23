@@ -20,8 +20,9 @@ public class ResultCallback_1
 	public ResultCallback_1 ()
 	{
 		super ();
-		if (getClass () == ResultCallback_1.class)
+		if (getClass () == ResultCallback_1.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Common.Apis.ResultCallback`1, Xamarin.GooglePlayServices.Basement", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

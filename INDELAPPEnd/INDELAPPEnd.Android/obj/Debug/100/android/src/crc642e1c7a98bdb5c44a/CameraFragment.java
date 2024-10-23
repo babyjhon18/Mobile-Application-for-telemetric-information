@@ -28,16 +28,18 @@ public class CameraFragment
 	public CameraFragment ()
 	{
 		super ();
-		if (getClass () == CameraFragment.class)
+		if (getClass () == CameraFragment.class) {
 			mono.android.TypeManager.Activate ("Xamarin.CommunityToolkit.UI.Views.CameraFragment, Xamarin.CommunityToolkit", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 
 	public CameraFragment (int p0)
 	{
 		super (p0);
-		if (getClass () == CameraFragment.class)
+		if (getClass () == CameraFragment.class) {
 			mono.android.TypeManager.Activate ("Xamarin.CommunityToolkit.UI.Views.CameraFragment, Xamarin.CommunityToolkit", "System.Int32, mscorlib", this, new java.lang.Object[] { p0 });
+		}
 	}
 
 

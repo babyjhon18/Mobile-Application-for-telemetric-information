@@ -19,24 +19,27 @@ public class LegacyFrameRenderer
 	public LegacyFrameRenderer (android.content.Context p0, android.util.AttributeSet p1, int p2)
 	{
 		super (p0, p1, p2);
-		if (getClass () == LegacyFrameRenderer.class)
+		if (getClass () == LegacyFrameRenderer.class) {
 			mono.android.TypeManager.Activate ("MR.Gestures.Android.Renderers.LegacyFrameRenderer, MR.Gestures", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android:System.Int32, mscorlib", this, new java.lang.Object[] { p0, p1, p2 });
+		}
 	}
 
 
 	public LegacyFrameRenderer (android.content.Context p0, android.util.AttributeSet p1)
 	{
 		super (p0, p1);
-		if (getClass () == LegacyFrameRenderer.class)
+		if (getClass () == LegacyFrameRenderer.class) {
 			mono.android.TypeManager.Activate ("MR.Gestures.Android.Renderers.LegacyFrameRenderer, MR.Gestures", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android", this, new java.lang.Object[] { p0, p1 });
+		}
 	}
 
 
 	public LegacyFrameRenderer (android.content.Context p0)
 	{
 		super (p0);
-		if (getClass () == LegacyFrameRenderer.class)
+		if (getClass () == LegacyFrameRenderer.class) {
 			mono.android.TypeManager.Activate ("MR.Gestures.Android.Renderers.LegacyFrameRenderer, MR.Gestures", "Android.Content.Context, Mono.Android", this, new java.lang.Object[] { p0 });
+		}
 	}
 
 

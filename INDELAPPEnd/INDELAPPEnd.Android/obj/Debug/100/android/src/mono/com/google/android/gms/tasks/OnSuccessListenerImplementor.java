@@ -20,8 +20,9 @@ public class OnSuccessListenerImplementor
 	public OnSuccessListenerImplementor ()
 	{
 		super ();
-		if (getClass () == OnSuccessListenerImplementor.class)
+		if (getClass () == OnSuccessListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Tasks.IOnSuccessListenerImplementor, Xamarin.GooglePlayServices.Tasks", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

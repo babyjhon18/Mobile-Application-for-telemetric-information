@@ -21,8 +21,9 @@ public class GoogleMap_OnIndoorStateChangeListenerImplementor
 	public GoogleMap_OnIndoorStateChangeListenerImplementor ()
 	{
 		super ();
-		if (getClass () == GoogleMap_OnIndoorStateChangeListenerImplementor.class)
+		if (getClass () == GoogleMap_OnIndoorStateChangeListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Maps.GoogleMap+IOnIndoorStateChangeListenerImplementor, Xamarin.GooglePlayServices.Maps", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

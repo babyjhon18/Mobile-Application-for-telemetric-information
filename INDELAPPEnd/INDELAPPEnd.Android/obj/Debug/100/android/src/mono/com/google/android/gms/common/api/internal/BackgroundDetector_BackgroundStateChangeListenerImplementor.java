@@ -20,8 +20,9 @@ public class BackgroundDetector_BackgroundStateChangeListenerImplementor
 	public BackgroundDetector_BackgroundStateChangeListenerImplementor ()
 	{
 		super ();
-		if (getClass () == BackgroundDetector_BackgroundStateChangeListenerImplementor.class)
+		if (getClass () == BackgroundDetector_BackgroundStateChangeListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Common.Apis.Internal.BackgroundDetector+IBackgroundStateChangeListenerImplementor, Xamarin.GooglePlayServices.Basement", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

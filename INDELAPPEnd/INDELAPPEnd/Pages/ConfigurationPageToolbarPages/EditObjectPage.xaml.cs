@@ -1,5 +1,6 @@
 ﻿using INDELAPPEnd.DataViewModels;
 using INDELAPPEnd.Helpers;
+using INDELAPPEnd.Models;
 using INDELAPPEnd.Pages.UtilsPage;
 using INDELLAPPEnd.Models;
 using INDELLAPPEnd.Pages;
@@ -109,7 +110,7 @@ namespace INDELAPPEnd.Pages.ConfigurationPageToolbarPages
                 OnPropertyChanged("IsVisibleGSM");
             }
         }
-        private BaseItemClass SelectedObjectType = new BaseItemClass();
+        private ObjectTypeClass SelectedObjectType = new ObjectTypeClass();
         private BaseItemClass SelectedConectionType = new BaseItemClass();
         private CustomLocationClass SelectedLocation = new CustomLocationClass();
         private ParentedContactClass SelectedConsumer = new ParentedContactClass();
@@ -131,13 +132,13 @@ namespace INDELAPPEnd.Pages.ConfigurationPageToolbarPages
             else
                 TitleOfPage = "Редактировать объект";
             ViewObject.Consumers.Insert(0, new ParentedContactClass() { Name = "Не выбрано" });
-            ViewObject.ObjectTypes.Insert(0, new BaseItemClass() { Name = "Не выбрано" });
+            ViewObject.Types.Insert(0, new ObjectTypeClass() { Name = "Не выбрано" });
             if (pageType == 0)
             {
                 objectNameEntry.Text = "";
                 houseCodeEntry.Text = "";
                 locationEntry.Text = "";
-                SelectedObjectType = ViewObject.ObjectTypes.FirstOrDefault();
+                SelectedObjectType = ViewObject.Types.FirstOrDefault();
                 objectTypeEntry.Text = SelectedObjectType.Name;
                 SelectedConsumer = ViewObject.Consumers.FirstOrDefault();
                 consumerEntry.Text = SelectedConsumer.Name;
@@ -160,12 +161,12 @@ namespace INDELAPPEnd.Pages.ConfigurationPageToolbarPages
                 else
                     SelectedConectionType = ViewObject.ConnectionTypes.Where(con =>
                             con.ID == Convert.ToInt32(ViewObject.Object.Device.Connection.Type)).FirstOrDefault();
-                SelectedObjectType = ViewObject.ObjectTypes.Where(o => o.ID == ViewObject.Object.Type.ID).FirstOrDefault();
+                SelectedObjectType = ViewObject.Types.Where(o => o.ID == ViewObject.Object.Type.ID).FirstOrDefault();
                 locationEntry.Text = ViewObject.Object.Location.Name;
                 consumerEntry.Text = ViewObject.Consumers.Where(c => c.ID == SelectedConsumer.ID).FirstOrDefault().Name;
                 connectionTypeEntry.Text = ViewObject.ConnectionTypes.Where(con =>
                             con.ID == SelectedConectionType.ID).FirstOrDefault().Name;
-                objectTypeEntry.Text = ViewObject.ObjectTypes.Where(o => o.ID == SelectedObjectType.ID).FirstOrDefault().Name;
+                objectTypeEntry.Text = ViewObject.Types.Where(o => o.ID == SelectedObjectType.ID).FirstOrDefault().Name;
                 GSMEntry.Text = ViewObject.Object.Device.Connection.PhoneNumber;
                 ethernetEntry.Text = ViewObject.Object.Device.Connection.IPAddress;
                 IPPortEntry.Text = ViewObject.Object.Device.Connection.IPPort;
@@ -268,7 +269,7 @@ namespace INDELAPPEnd.Pages.ConfigurationPageToolbarPages
 
         private async void ObjectTypeEntry_Tapped(object sender, EventArgs e)
         {
-            MessagingCenter.Subscribe<ListViewPage, BaseItemClass>(this, "SetObjectType", (page, objectType) =>
+            MessagingCenter.Subscribe<ListViewPage, ObjectTypeClass>(this, "SetObjectType", (page, objectType) =>
             {
                 I++;
                 SelectedObjectType = objectType;
@@ -276,9 +277,9 @@ namespace INDELAPPEnd.Pages.ConfigurationPageToolbarPages
                     objectTypeEntry.Text = "Не выбрано";
                 else
                     objectTypeEntry.Text = objectType.Name;
-                MessagingCenter.Unsubscribe<ListViewPage, BaseItemClass>(this, "SetObjectType");
+                MessagingCenter.Unsubscribe<ListViewPage, ObjectTypeClass>(this, "SetObjectType");
             });
-            await Navigation.PushModalAsync(new ListViewPage(ViewObject.ObjectTypes, 1,
+            await Navigation.PushModalAsync(new ListViewPage(ViewObject.Types, 1,
                 objectTypeEntry.Text == "" || objectTypeEntry == null ? "Не выбрано" : objectTypeEntry.Text));
         }
 
@@ -355,6 +356,7 @@ namespace INDELAPPEnd.Pages.ConfigurationPageToolbarPages
                         }
                     }
                 };
+                Console.WriteLine(Object);
                 if (Object.name == "" || Object.name == null)
                     await Navigation.PushModalAsync(new AcceptDeclinePage("Ошибка заполнения. " +
                         "Поле названия не может быть пустым.", "Ок", "", false));

@@ -20,8 +20,9 @@ public class GoogleMap_OnGroundOverlayClickListenerImplementor
 	public GoogleMap_OnGroundOverlayClickListenerImplementor ()
 	{
 		super ();
-		if (getClass () == GoogleMap_OnGroundOverlayClickListenerImplementor.class)
+		if (getClass () == GoogleMap_OnGroundOverlayClickListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Maps.GoogleMap+IOnGroundOverlayClickListenerImplementor, Xamarin.GooglePlayServices.Maps", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

@@ -20,8 +20,9 @@ public class ImageManager_OnImageLoadedListenerImplementor
 	public ImageManager_OnImageLoadedListenerImplementor ()
 	{
 		super ();
-		if (getClass () == ImageManager_OnImageLoadedListenerImplementor.class)
+		if (getClass () == ImageManager_OnImageLoadedListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Common.Images.ImageManager+IOnImageLoadedListenerImplementor, Xamarin.GooglePlayServices.Base", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

@@ -19,8 +19,9 @@ public class GestureManager_TapAndPanGestureDetector
 	public GestureManager_TapAndPanGestureDetector (android.content.Context p0, android.view.GestureDetector.OnGestureListener p1)
 	{
 		super (p0, p1);
-		if (getClass () == GestureManager_TapAndPanGestureDetector.class)
+		if (getClass () == GestureManager_TapAndPanGestureDetector.class) {
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.GestureManager+TapAndPanGestureDetector, Xamarin.Forms.Platform.Android", "Android.Content.Context, Mono.Android:Android.Views.GestureDetector+IOnGestureListener, Mono.Android", this, new java.lang.Object[] { p0, p1 });
+		}
 	}
 
 

@@ -19,24 +19,27 @@ public class ThumbFrameRenderer
 	public ThumbFrameRenderer (android.content.Context p0)
 	{
 		super (p0);
-		if (getClass () == ThumbFrameRenderer.class)
+		if (getClass () == ThumbFrameRenderer.class) {
 			mono.android.TypeManager.Activate ("Xamarin.CommunityToolkit.UI.Views.ThumbFrameRenderer, Xamarin.CommunityToolkit", "Android.Content.Context, Mono.Android", this, new java.lang.Object[] { p0 });
+		}
 	}
 
 
 	public ThumbFrameRenderer (android.content.Context p0, android.util.AttributeSet p1)
 	{
 		super (p0, p1);
-		if (getClass () == ThumbFrameRenderer.class)
+		if (getClass () == ThumbFrameRenderer.class) {
 			mono.android.TypeManager.Activate ("Xamarin.CommunityToolkit.UI.Views.ThumbFrameRenderer, Xamarin.CommunityToolkit", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android", this, new java.lang.Object[] { p0, p1 });
+		}
 	}
 
 
 	public ThumbFrameRenderer (android.content.Context p0, android.util.AttributeSet p1, int p2)
 	{
 		super (p0, p1, p2);
-		if (getClass () == ThumbFrameRenderer.class)
+		if (getClass () == ThumbFrameRenderer.class) {
 			mono.android.TypeManager.Activate ("Xamarin.CommunityToolkit.UI.Views.ThumbFrameRenderer, Xamarin.CommunityToolkit", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android:System.Int32, mscorlib", this, new java.lang.Object[] { p0, p1, p2 });
+		}
 	}
 
 

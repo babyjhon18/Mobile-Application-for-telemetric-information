@@ -20,8 +20,9 @@ public class VisualFeedbackEffectRouter_FastRendererOnLayoutChangeListener
 	public VisualFeedbackEffectRouter_FastRendererOnLayoutChangeListener ()
 	{
 		super ();
-		if (getClass () == VisualFeedbackEffectRouter_FastRendererOnLayoutChangeListener.class)
+		if (getClass () == VisualFeedbackEffectRouter_FastRendererOnLayoutChangeListener.class) {
 			mono.android.TypeManager.Activate ("Xamarin.CommunityToolkit.Android.Effects.VisualFeedbackEffectRouter+FastRendererOnLayoutChangeListener, Xamarin.CommunityToolkit", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

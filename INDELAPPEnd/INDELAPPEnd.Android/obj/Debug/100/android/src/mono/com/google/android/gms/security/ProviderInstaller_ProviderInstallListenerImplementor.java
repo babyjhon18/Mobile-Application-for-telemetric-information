@@ -21,8 +21,9 @@ public class ProviderInstaller_ProviderInstallListenerImplementor
 	public ProviderInstaller_ProviderInstallListenerImplementor ()
 	{
 		super ();
-		if (getClass () == ProviderInstaller_ProviderInstallListenerImplementor.class)
+		if (getClass () == ProviderInstaller_ProviderInstallListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Security.ProviderInstaller+IProviderInstallListenerImplementor, Xamarin.GooglePlayServices.Basement", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

@@ -20,8 +20,9 @@ public class GoogleMap_OnMapLongClickListenerImplementor
 	public GoogleMap_OnMapLongClickListenerImplementor ()
 	{
 		super ();
-		if (getClass () == GoogleMap_OnMapLongClickListenerImplementor.class)
+		if (getClass () == GoogleMap_OnMapLongClickListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Maps.GoogleMap+IOnMapLongClickListenerImplementor, Xamarin.GooglePlayServices.Maps", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

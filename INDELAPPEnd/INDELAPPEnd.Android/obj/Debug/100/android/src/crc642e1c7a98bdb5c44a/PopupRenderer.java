@@ -21,24 +21,27 @@ public class PopupRenderer
 	public PopupRenderer (android.content.Context p0)
 	{
 		super (p0);
-		if (getClass () == PopupRenderer.class)
+		if (getClass () == PopupRenderer.class) {
 			mono.android.TypeManager.Activate ("Xamarin.CommunityToolkit.UI.Views.PopupRenderer, Xamarin.CommunityToolkit", "Android.Content.Context, Mono.Android", this, new java.lang.Object[] { p0 });
+		}
 	}
 
 
 	public PopupRenderer (android.content.Context p0, boolean p1, android.content.DialogInterface.OnCancelListener p2)
 	{
 		super (p0, p1, p2);
-		if (getClass () == PopupRenderer.class)
+		if (getClass () == PopupRenderer.class) {
 			mono.android.TypeManager.Activate ("Xamarin.CommunityToolkit.UI.Views.PopupRenderer, Xamarin.CommunityToolkit", "Android.Content.Context, Mono.Android:System.Boolean, mscorlib:Android.Content.IDialogInterfaceOnCancelListener, Mono.Android", this, new java.lang.Object[] { p0, p1, p2 });
+		}
 	}
 
 
 	public PopupRenderer (android.content.Context p0, int p1)
 	{
 		super (p0, p1);
-		if (getClass () == PopupRenderer.class)
+		if (getClass () == PopupRenderer.class) {
 			mono.android.TypeManager.Activate ("Xamarin.CommunityToolkit.UI.Views.PopupRenderer, Xamarin.CommunityToolkit", "Android.Content.Context, Mono.Android:System.Int32, mscorlib", this, new java.lang.Object[] { p0, p1 });
+		}
 	}
 
 

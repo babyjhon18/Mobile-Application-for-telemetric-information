@@ -20,24 +20,27 @@ public class ContainerView
 	public ContainerView (android.content.Context p0)
 	{
 		super (p0);
-		if (getClass () == ContainerView.class)
+		if (getClass () == ContainerView.class) {
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.ContainerView, Xamarin.Forms.Platform.Android", "Android.Content.Context, Mono.Android", this, new java.lang.Object[] { p0 });
+		}
 	}
 
 
 	public ContainerView (android.content.Context p0, android.util.AttributeSet p1)
 	{
 		super (p0, p1);
-		if (getClass () == ContainerView.class)
+		if (getClass () == ContainerView.class) {
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.ContainerView, Xamarin.Forms.Platform.Android", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android", this, new java.lang.Object[] { p0, p1 });
+		}
 	}
 
 
 	public ContainerView (android.content.Context p0, android.util.AttributeSet p1, int p2)
 	{
 		super (p0, p1, p2);
-		if (getClass () == ContainerView.class)
+		if (getClass () == ContainerView.class) {
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.ContainerView, Xamarin.Forms.Platform.Android", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android:System.Int32, mscorlib", this, new java.lang.Object[] { p0, p1, p2 });
+		}
 	}
 
 

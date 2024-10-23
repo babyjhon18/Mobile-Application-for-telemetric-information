@@ -20,8 +20,9 @@ public class GoogleMap_OnInfoWindowCloseListenerImplementor
 	public GoogleMap_OnInfoWindowCloseListenerImplementor ()
 	{
 		super ();
-		if (getClass () == GoogleMap_OnInfoWindowCloseListenerImplementor.class)
+		if (getClass () == GoogleMap_OnInfoWindowCloseListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Maps.GoogleMap+IOnInfoWindowCloseListenerImplementor, Xamarin.GooglePlayServices.Maps", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

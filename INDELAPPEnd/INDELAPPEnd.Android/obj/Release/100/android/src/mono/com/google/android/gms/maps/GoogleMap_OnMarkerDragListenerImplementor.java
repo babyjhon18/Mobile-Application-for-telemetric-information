@@ -22,8 +22,9 @@ public class GoogleMap_OnMarkerDragListenerImplementor
 	public GoogleMap_OnMarkerDragListenerImplementor ()
 	{
 		super ();
-		if (getClass () == GoogleMap_OnMarkerDragListenerImplementor.class)
+		if (getClass () == GoogleMap_OnMarkerDragListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Maps.GoogleMap+IOnMarkerDragListenerImplementor, Xamarin.GooglePlayServices.Maps", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

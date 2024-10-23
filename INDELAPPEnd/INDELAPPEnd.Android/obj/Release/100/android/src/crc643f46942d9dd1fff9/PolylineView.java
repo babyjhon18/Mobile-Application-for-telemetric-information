@@ -18,24 +18,27 @@ public class PolylineView
 	public PolylineView (android.content.Context p0)
 	{
 		super (p0);
-		if (getClass () == PolylineView.class)
+		if (getClass () == PolylineView.class) {
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.PolylineView, Xamarin.Forms.Platform.Android", "Android.Content.Context, Mono.Android", this, new java.lang.Object[] { p0 });
+		}
 	}
 
 
 	public PolylineView (android.content.Context p0, android.util.AttributeSet p1)
 	{
 		super (p0, p1);
-		if (getClass () == PolylineView.class)
+		if (getClass () == PolylineView.class) {
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.PolylineView, Xamarin.Forms.Platform.Android", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android", this, new java.lang.Object[] { p0, p1 });
+		}
 	}
 
 
 	public PolylineView (android.content.Context p0, android.util.AttributeSet p1, int p2)
 	{
 		super (p0, p1, p2);
-		if (getClass () == PolylineView.class)
+		if (getClass () == PolylineView.class) {
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.PolylineView, Xamarin.Forms.Platform.Android", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android:System.Int32, mscorlib", this, new java.lang.Object[] { p0, p1, p2 });
+		}
 	}
 
 	private java.util.ArrayList refList;

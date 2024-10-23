@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using INDELAPPEnd.Models;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace INDELLAPPEnd.Models
@@ -12,7 +13,7 @@ namespace INDELLAPPEnd.Models
             Streets = new List<BaseItemClass>();
             Groups = new List<BaseItemClass>();
             ConnectionTypes = new List<BaseItemClass>();
-            ObjectTypes = new List<BaseItemClass>();
+            Types = new List<ObjectTypeClass>();
             Consumers = new List<ParentedContactClass>();
             Kinds = new List<ObjectKindClass>();
         }
@@ -27,7 +28,7 @@ namespace INDELLAPPEnd.Models
         //справочник типов каналов связи
         public List<BaseItemClass> ConnectionTypes { get; set; }
         //справочник типов объектов
-        public List<BaseItemClass> ObjectTypes { get; set; }
+        public List<ObjectTypeClass> Types { get; set; }
         //справочник потребителей
         public List<ParentedContactClass> Consumers { get; set; }
         //справочник видов
