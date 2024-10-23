@@ -19,8 +19,9 @@ public class CameraCaptureListener
 	public CameraCaptureListener ()
 	{
 		super ();
-		if (getClass () == CameraCaptureListener.class)
+		if (getClass () == CameraCaptureListener.class) {
 			mono.android.TypeManager.Activate ("Xamarin.CommunityToolkit.UI.Views.CameraCaptureListener, Xamarin.CommunityToolkit", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

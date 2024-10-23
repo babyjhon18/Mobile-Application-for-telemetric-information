@@ -20,8 +20,9 @@ public class GoogleMap_OnInfoWindowLongClickListenerImplementor
 	public GoogleMap_OnInfoWindowLongClickListenerImplementor ()
 	{
 		super ();
-		if (getClass () == GoogleMap_OnInfoWindowLongClickListenerImplementor.class)
+		if (getClass () == GoogleMap_OnInfoWindowLongClickListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Maps.GoogleMap+IOnInfoWindowLongClickListenerImplementor, Xamarin.GooglePlayServices.Maps", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

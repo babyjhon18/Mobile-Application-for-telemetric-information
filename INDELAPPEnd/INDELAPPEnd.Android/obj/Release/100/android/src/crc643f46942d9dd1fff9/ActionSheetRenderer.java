@@ -23,8 +23,9 @@ public class ActionSheetRenderer
 	public ActionSheetRenderer (android.content.Context p0)
 	{
 		super (p0);
-		if (getClass () == ActionSheetRenderer.class)
+		if (getClass () == ActionSheetRenderer.class) {
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.ActionSheetRenderer, Xamarin.Forms.Platform.Android", "Android.Content.Context, Mono.Android", this, new java.lang.Object[] { p0 });
+		}
 	}
 
 

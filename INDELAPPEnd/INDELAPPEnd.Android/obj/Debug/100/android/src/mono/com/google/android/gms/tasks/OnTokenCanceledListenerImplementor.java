@@ -20,8 +20,9 @@ public class OnTokenCanceledListenerImplementor
 	public OnTokenCanceledListenerImplementor ()
 	{
 		super ();
-		if (getClass () == OnTokenCanceledListenerImplementor.class)
+		if (getClass () == OnTokenCanceledListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Tasks.IOnTokenCanceledListenerImplementor, Xamarin.GooglePlayServices.Tasks", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

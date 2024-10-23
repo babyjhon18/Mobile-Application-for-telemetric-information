@@ -20,8 +20,9 @@ public class GoogleMap_OnCameraMoveStartedListenerImplementor
 	public GoogleMap_OnCameraMoveStartedListenerImplementor ()
 	{
 		super ();
-		if (getClass () == GoogleMap_OnCameraMoveStartedListenerImplementor.class)
+		if (getClass () == GoogleMap_OnCameraMoveStartedListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Maps.GoogleMap+IOnCameraMoveStartedListenerImplementor, Xamarin.GooglePlayServices.Maps", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

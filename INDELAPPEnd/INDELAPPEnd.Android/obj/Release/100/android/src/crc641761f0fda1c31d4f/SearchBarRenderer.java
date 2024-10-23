@@ -19,24 +19,27 @@ public class SearchBarRenderer
 	public SearchBarRenderer (android.content.Context p0, android.util.AttributeSet p1, int p2)
 	{
 		super (p0, p1, p2);
-		if (getClass () == SearchBarRenderer.class)
+		if (getClass () == SearchBarRenderer.class) {
 			mono.android.TypeManager.Activate ("MR.Gestures.Android.Renderers.SearchBarRenderer, MR.Gestures", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android:System.Int32, mscorlib", this, new java.lang.Object[] { p0, p1, p2 });
+		}
 	}
 
 
 	public SearchBarRenderer (android.content.Context p0, android.util.AttributeSet p1)
 	{
 		super (p0, p1);
-		if (getClass () == SearchBarRenderer.class)
+		if (getClass () == SearchBarRenderer.class) {
 			mono.android.TypeManager.Activate ("MR.Gestures.Android.Renderers.SearchBarRenderer, MR.Gestures", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android", this, new java.lang.Object[] { p0, p1 });
+		}
 	}
 
 
 	public SearchBarRenderer (android.content.Context p0)
 	{
 		super (p0);
-		if (getClass () == SearchBarRenderer.class)
+		if (getClass () == SearchBarRenderer.class) {
 			mono.android.TypeManager.Activate ("MR.Gestures.Android.Renderers.SearchBarRenderer, MR.Gestures", "Android.Content.Context, Mono.Android", this, new java.lang.Object[] { p0 });
+		}
 	}
 
 

@@ -20,8 +20,9 @@ public class OnCompleteListenerImplementor
 	public OnCompleteListenerImplementor ()
 	{
 		super ();
-		if (getClass () == OnCompleteListenerImplementor.class)
+		if (getClass () == OnCompleteListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Tasks.IOnCompleteListenerImplementor, Xamarin.GooglePlayServices.Tasks", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

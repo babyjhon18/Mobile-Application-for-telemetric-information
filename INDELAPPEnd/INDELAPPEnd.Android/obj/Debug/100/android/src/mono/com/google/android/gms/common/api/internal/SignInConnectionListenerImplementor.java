@@ -20,8 +20,9 @@ public class SignInConnectionListenerImplementor
 	public SignInConnectionListenerImplementor ()
 	{
 		super ();
-		if (getClass () == SignInConnectionListenerImplementor.class)
+		if (getClass () == SignInConnectionListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Common.Api.Internal.ISignInConnectionListenerImplementor, Xamarin.GooglePlayServices.Base", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

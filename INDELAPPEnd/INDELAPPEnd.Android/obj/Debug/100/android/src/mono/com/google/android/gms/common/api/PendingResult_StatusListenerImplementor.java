@@ -20,8 +20,9 @@ public class PendingResult_StatusListenerImplementor
 	public PendingResult_StatusListenerImplementor ()
 	{
 		super ();
-		if (getClass () == PendingResult_StatusListenerImplementor.class)
+		if (getClass () == PendingResult_StatusListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Common.Apis.PendingResult+IStatusListenerImplementor, Xamarin.GooglePlayServices.Base", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

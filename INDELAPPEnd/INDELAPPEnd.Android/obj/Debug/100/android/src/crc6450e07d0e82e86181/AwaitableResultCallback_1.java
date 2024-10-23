@@ -20,8 +20,9 @@ public class AwaitableResultCallback_1
 	public AwaitableResultCallback_1 ()
 	{
 		super ();
-		if (getClass () == AwaitableResultCallback_1.class)
+		if (getClass () == AwaitableResultCallback_1.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Common.Apis.AwaitableResultCallback`1, Xamarin.GooglePlayServices.Basement", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

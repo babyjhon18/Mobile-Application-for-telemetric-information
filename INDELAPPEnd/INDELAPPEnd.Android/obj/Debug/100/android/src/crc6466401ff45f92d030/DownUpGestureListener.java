@@ -18,8 +18,9 @@ public class DownUpGestureListener
 	public DownUpGestureListener ()
 	{
 		super ();
-		if (getClass () == DownUpGestureListener.class)
+		if (getClass () == DownUpGestureListener.class) {
 			mono.android.TypeManager.Activate ("MR.Gestures.Android.DownUpGestureListener, MR.Gestures", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 	private java.util.ArrayList refList;

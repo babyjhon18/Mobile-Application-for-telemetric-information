@@ -21,8 +21,9 @@ public class PopupRenderer
 	public PopupRenderer (android.content.Context p0)
 	{
 		super (p0);
-		if (getClass () == PopupRenderer.class)
+		if (getClass () == PopupRenderer.class) {
 			mono.android.TypeManager.Activate ("Xamarin.CommunityToolkit.UI.Views.PopupRenderer, Xamarin.CommunityToolkit", "Android.Content.Context, Mono.Android", this, new java.lang.Object[] { p0 });
+		}
 	}
 
 

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("INDELAPPEnd")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e5b7b10049b3a4cc463fca020a14ad29980258d")]
 [assembly: System.Reflection.AssemblyProductAttribute("INDELAPPEnd")]
 [assembly: System.Reflection.AssemblyTitleAttribute("INDELAPPEnd")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

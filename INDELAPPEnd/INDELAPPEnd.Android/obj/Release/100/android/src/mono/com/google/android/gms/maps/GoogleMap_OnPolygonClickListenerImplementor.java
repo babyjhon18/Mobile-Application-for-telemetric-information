@@ -20,8 +20,9 @@ public class GoogleMap_OnPolygonClickListenerImplementor
 	public GoogleMap_OnPolygonClickListenerImplementor ()
 	{
 		super ();
-		if (getClass () == GoogleMap_OnPolygonClickListenerImplementor.class)
+		if (getClass () == GoogleMap_OnPolygonClickListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Maps.GoogleMap+IOnPolygonClickListenerImplementor, Xamarin.GooglePlayServices.Maps", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

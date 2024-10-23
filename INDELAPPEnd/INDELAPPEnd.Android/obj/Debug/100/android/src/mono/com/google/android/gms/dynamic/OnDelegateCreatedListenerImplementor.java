@@ -20,8 +20,9 @@ public class OnDelegateCreatedListenerImplementor
 	public OnDelegateCreatedListenerImplementor ()
 	{
 		super ();
-		if (getClass () == OnDelegateCreatedListenerImplementor.class)
+		if (getClass () == OnDelegateCreatedListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Dynamic.IOnDelegateCreatedListenerImplementor, Xamarin.GooglePlayServices.Basement", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

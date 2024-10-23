@@ -20,8 +20,9 @@ public class AwaitableTaskCompleteListener_1
 	public AwaitableTaskCompleteListener_1 ()
 	{
 		super ();
-		if (getClass () == AwaitableTaskCompleteListener_1.class)
+		if (getClass () == AwaitableTaskCompleteListener_1.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Extensions.AwaitableTaskCompleteListener`1, Xamarin.GooglePlayServices.Tasks", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

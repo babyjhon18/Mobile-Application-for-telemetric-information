@@ -19,8 +19,9 @@ public class SnackBar_SnackBarCallback
 	public SnackBar_SnackBarCallback ()
 	{
 		super ();
-		if (getClass () == SnackBar_SnackBarCallback.class)
+		if (getClass () == SnackBar_SnackBarCallback.class) {
 			mono.android.TypeManager.Activate ("Xamarin.CommunityToolkit.UI.Views.SnackBar+SnackBarCallback, Xamarin.CommunityToolkit", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

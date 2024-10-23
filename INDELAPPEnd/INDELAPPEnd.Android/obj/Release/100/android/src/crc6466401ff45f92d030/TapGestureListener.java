@@ -18,8 +18,9 @@ public class TapGestureListener
 	public TapGestureListener ()
 	{
 		super ();
-		if (getClass () == TapGestureListener.class)
+		if (getClass () == TapGestureListener.class) {
 			mono.android.TypeManager.Activate ("MR.Gestures.Android.TapGestureListener, MR.Gestures", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 	private java.util.ArrayList refList;

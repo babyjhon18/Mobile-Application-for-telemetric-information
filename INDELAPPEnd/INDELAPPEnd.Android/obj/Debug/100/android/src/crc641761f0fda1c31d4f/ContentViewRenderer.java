@@ -19,24 +19,27 @@ public class ContentViewRenderer
 	public ContentViewRenderer (android.content.Context p0, android.util.AttributeSet p1, int p2)
 	{
 		super (p0, p1, p2);
-		if (getClass () == ContentViewRenderer.class)
+		if (getClass () == ContentViewRenderer.class) {
 			mono.android.TypeManager.Activate ("MR.Gestures.Android.Renderers.ContentViewRenderer, MR.Gestures", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android:System.Int32, mscorlib", this, new java.lang.Object[] { p0, p1, p2 });
+		}
 	}
 
 
 	public ContentViewRenderer (android.content.Context p0, android.util.AttributeSet p1)
 	{
 		super (p0, p1);
-		if (getClass () == ContentViewRenderer.class)
+		if (getClass () == ContentViewRenderer.class) {
 			mono.android.TypeManager.Activate ("MR.Gestures.Android.Renderers.ContentViewRenderer, MR.Gestures", "Android.Content.Context, Mono.Android:Android.Util.IAttributeSet, Mono.Android", this, new java.lang.Object[] { p0, p1 });
+		}
 	}
 
 
 	public ContentViewRenderer (android.content.Context p0)
 	{
 		super (p0);
-		if (getClass () == ContentViewRenderer.class)
+		if (getClass () == ContentViewRenderer.class) {
 			mono.android.TypeManager.Activate ("MR.Gestures.Android.Renderers.ContentViewRenderer, MR.Gestures", "Android.Content.Context, Mono.Android", this, new java.lang.Object[] { p0 });
+		}
 	}
 
 

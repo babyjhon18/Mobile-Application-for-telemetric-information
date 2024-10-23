@@ -22,8 +22,9 @@ public class GoogleApiClientConnectionCallbacksImpl
 	public GoogleApiClientConnectionCallbacksImpl ()
 	{
 		super ();
-		if (getClass () == GoogleApiClientConnectionCallbacksImpl.class)
+		if (getClass () == GoogleApiClientConnectionCallbacksImpl.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Common.Apis.GoogleApiClientConnectionCallbacksImpl, Xamarin.GooglePlayServices.Base", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

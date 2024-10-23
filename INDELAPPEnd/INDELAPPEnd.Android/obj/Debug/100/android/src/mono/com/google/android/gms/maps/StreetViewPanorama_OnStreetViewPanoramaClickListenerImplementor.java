@@ -20,8 +20,9 @@ public class StreetViewPanorama_OnStreetViewPanoramaClickListenerImplementor
 	public StreetViewPanorama_OnStreetViewPanoramaClickListenerImplementor ()
 	{
 		super ();
-		if (getClass () == StreetViewPanorama_OnStreetViewPanoramaClickListenerImplementor.class)
+		if (getClass () == StreetViewPanorama_OnStreetViewPanoramaClickListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Maps.StreetViewPanorama+IOnStreetViewPanoramaClickListenerImplementor, Xamarin.GooglePlayServices.Maps", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 

@@ -1,4 +1,5 @@
-﻿using INDELLAPPEnd.Models;
+﻿using INDELAPPEnd.Models;
+using INDELLAPPEnd.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -28,6 +29,7 @@ namespace INDELAPPEnd.Pages
     {
         private CustomLocationClass SelectedLocation = new CustomLocationClass();
         private BaseItemClass SelectedItemFromAnyField = new BaseItemClass();
+        private ObjectTypeClass SelectedObjectType = new ObjectTypeClass();
         public List<BaseItemClass> ArchiveTypeList = new List<BaseItemClass>()
         {
             new BaseItemClass() { ID = 0, Name = "Текущие" },
@@ -80,15 +82,16 @@ namespace INDELAPPEnd.Pages
             BindingContext = this;
         }
 
-        public ListViewPage(List<BaseItemClass> Types, int index, string Type)
+        public ListViewPage(Object Types, int index, string Type)
         {
             InitializeComponent();
             if (index == 1)
             {
+                List<ObjectTypeClass> objectTypeClasses = (List<ObjectTypeClass>)Types;
                 ListType = 1;
                 Title = "Выберете тип объекта";
                 RegionLocationFrame.IsVisible = false;
-                foreach (var type in Types)
+                foreach (var type in objectTypeClasses)
                 {
                     RadioButton ObjectTypeRadioButton = new RadioButton()
                     {
@@ -101,7 +104,7 @@ namespace INDELAPPEnd.Pages
                     if (type.Name == Type)
                     {
                         ObjectTypeRadioButton.IsChecked = true;
-                        SelectedItemFromAnyField = type;
+                        SelectedObjectType = type;
                     }
                     ObjectTypeRadioButton.CheckedChanged += AnyField_CheckedChanged;
                     anyField.Children.Add(ObjectTypeRadioButton);
@@ -109,10 +112,11 @@ namespace INDELAPPEnd.Pages
             }
             else if (index == 3)
             {
+                List<BaseItemClass> _Types = (List<BaseItemClass>)Types;
                 ListType = 3;
                 Title = "Выберете тип соединения";
                 RegionLocationFrame.IsVisible = false;
-                foreach (var type in Types)
+                foreach (var type in _Types)
                 {
                     RadioButton ConnectionTypeRadioButton = new RadioButton()
                     {
@@ -133,10 +137,11 @@ namespace INDELAPPEnd.Pages
             }
             else if (index == 4)
             {
+                List<BaseItemClass> _Types = (List<BaseItemClass>)Types;
                 ListType = 4;
                 Title = "Выберете тип ПУ";
                 RegionLocationFrame.IsVisible = false;
-                foreach (var type in Types)
+                foreach (var type in _Types)
                 {
                     RadioButton PUTypeRadioButton = new RadioButton()
                     {
@@ -162,10 +167,11 @@ namespace INDELAPPEnd.Pages
             }
             else if (index == 5)
             {
+                List<BaseItemClass> _Types = (List<BaseItemClass>)Types;
                 ListType = 5;
                 Title = "Выберете тип учета";
                 RegionLocationFrame.IsVisible = false;
-                foreach (var type in Types)
+                foreach (var type in _Types)
                 {
                     RadioButton AccountingTypeRadioButton = new RadioButton()
                     {
@@ -186,10 +192,11 @@ namespace INDELAPPEnd.Pages
             }
             else if (index == 6)
             {
+                List<BaseItemClass> _Types = (List<BaseItemClass>)Types;
                 ListType = 6;
                 Title = "Выберете среду учета";
                 RegionLocationFrame.IsVisible = false;
-                foreach (var type in Types)
+                foreach (var type in _Types)
                 {
                     RadioButton EnvironmentTypeRadioButton = new RadioButton()
                     {
@@ -210,10 +217,11 @@ namespace INDELAPPEnd.Pages
             }
             else if (index == 7)
             {
+                List<BaseItemClass> _Types = (List<BaseItemClass>)Types;
                 ListType = 7;
                 Title = "Выберете состояние";
                 RegionLocationFrame.IsVisible = false;
-                foreach (var type in Types)
+                foreach (var type in _Types)
                 {
                     RadioButton CounterStateRadioButton = new RadioButton()
                     {
@@ -234,10 +242,11 @@ namespace INDELAPPEnd.Pages
             }
             else if (index == 9)
             {
+                List<BaseItemClass> _Types = (List<BaseItemClass>)Types;
                 ListType = 9;
                 Title = "Выберете тип контроллера";
                 RegionLocationFrame.IsVisible = false;
-                foreach (var type in Types)
+                foreach (var type in _Types)
                 {
                     RadioButton CounterTypeRadioButton = new RadioButton()
                     {
@@ -350,7 +359,7 @@ namespace INDELAPPEnd.Pages
             {
                 case 1:
                     RadioButton radioButtonType = sender as RadioButton;
-                    SelectedItemFromAnyField = radioButtonType.BindingContext as BaseItemClass;
+                    SelectedObjectType = radioButtonType.BindingContext as ObjectTypeClass;
                     break;
                 case 2:
                     RadioButton radioButtonConsumer = sender as RadioButton;
@@ -400,7 +409,7 @@ namespace INDELAPPEnd.Pages
                     await Navigation.PopModalAsync(true);
                     break;
                 case 1:
-                    MessagingCenter.Send(this, "SetObjectType", SelectedItemFromAnyField);
+                    MessagingCenter.Send(this, "SetObjectType", SelectedObjectType);
                     await Navigation.PopModalAsync(true);
                     break;
                 case 2:

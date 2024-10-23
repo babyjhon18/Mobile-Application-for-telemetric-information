@@ -20,8 +20,9 @@ public class LocationSource_OnLocationChangedListenerImplementor
 	public LocationSource_OnLocationChangedListenerImplementor ()
 	{
 		super ();
-		if (getClass () == LocationSource_OnLocationChangedListenerImplementor.class)
+		if (getClass () == LocationSource_OnLocationChangedListenerImplementor.class) {
 			mono.android.TypeManager.Activate ("Android.Gms.Maps.ILocationSourceOnLocationChangedListenerImplementor, Xamarin.GooglePlayServices.Maps", "", this, new java.lang.Object[] {  });
+		}
 	}
 
 
